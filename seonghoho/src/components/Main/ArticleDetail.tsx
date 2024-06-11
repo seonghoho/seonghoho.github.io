@@ -1,22 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import { ArticleFrontmatterType } from 'types/ArticleDetailType';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-type ArticleDetailProps = {
-  title: string
-  date: string
-  categories: string[]
-  summary: string
-  thumbnail: string
+type ArticleDetailProps = ArticleFrontmatterType & {
   link: string
 }
-
-const ThumbnailImage = styled.img`
-    width: 100%;
-    height: 200px;
-    border-radius: 10px 10px 0 0;
-    object-fit: cover;
-`;
 
 const ArticleDetailContent = styled.div`
     flex: 1;
@@ -24,7 +14,6 @@ const ArticleDetailContent = styled.div`
     flex-direction: column;
     padding: 15px;
 `;
-
 
 const ArticleDetailWrapper = styled(Link)`
     display: flex;
@@ -61,7 +50,6 @@ const Date = styled.div`
 const Category = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
     margin: 10px -5px;
 `;
 
@@ -88,6 +76,12 @@ const Summary = styled.div`
     opacity: 0.8;
 `;
 
+const ThumbnailImage = styled(GatsbyImage)`
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+`;
+
 const ArticleDetail: FunctionComponent<ArticleDetailProps> = function({
                                                                         title,
                                                                         date,
@@ -96,19 +90,23 @@ const ArticleDetail: FunctionComponent<ArticleDetailProps> = function({
                                                                         thumbnail,
                                                                         link,
                                                                       }) {
-  return <ArticleDetailWrapper to={link}>
-    <ThumbnailImage src={thumbnail} alt="Post Item Image" />
-    <ArticleDetailContent>
-      <Title>{title}</Title>
-      <Date>{date}</Date>
-      <Category>
-        {categories.map(category => (
-          <CategoryItem key={category}>{category}</CategoryItem>
-        ))}
-      </Category>
-      <Summary>{summary}</Summary>
-    </ArticleDetailContent>
-  </ArticleDetailWrapper>;
+  const image = thumbnail?.childImageSharp ? getImage(thumbnail.childImageSharp.gatsbyImageData) : null;
+
+  return (
+    <ArticleDetailWrapper to={link}>
+      {image && <ThumbnailImage image={image} alt="Post Item Image" />}
+      <ArticleDetailContent>
+        <Title>{title}</Title>
+        <Date>{date}</Date>
+        <Category>
+          {categories.map(item => (
+            <CategoryItem key={item}>{item}</CategoryItem>
+          ))}
+        </Category>
+        <Summary>{summary}</Summary>
+      </ArticleDetailContent>
+    </ArticleDetailWrapper>
+  );
 };
 
 export default ArticleDetail;

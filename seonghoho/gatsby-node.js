@@ -23,3 +23,20 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
     },
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  createTypes(`
+    type MarkdownRemarkFrontmatter {
+      title: String
+      summary: String
+      date: Date @dateformat
+      categories: [String]
+      thumbnail: File @fileByRelativePath
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+  `);
+};

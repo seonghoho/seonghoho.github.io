@@ -1,17 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import ArticleDetail from 'components/Main/ArticleDetail';
+import { ArticleListItemType } from 'types/ArticleDetailType';
 
-const ARTICLE_DETAIL_DATA = {
-  title: 'Post Item Title',
-  date: '2020.01.29.',
-  categories: ['Web', 'Frontend', 'Testing'],
-  summary:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellat doloremque fugit quis rem temporibus! Maxime molestias, suntrem debitis odit harum impedit. Modi cupiditate harum dignissimos eos in corrupti!',
-  thumbnail:
-    '<https://ji5485.github.io/static/e4f34c558ae8e8235ff53b0311085796/4d854/javascript-core-concept-summary-function-1.webp>',
-  link: '<https://www.google.co.kr/>',
-};
+type ArticleListProps = {
+  articles: ArticleListItemType[]
+}
+
 const ArticleListWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -19,7 +14,7 @@ const ArticleListWrapper = styled.div`
     width: 768px;
     margin: 0 auto;
     padding: 50px 0 100px;
-
+  
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         width: 100%;
@@ -27,12 +22,19 @@ const ArticleListWrapper = styled.div`
     }
 `;
 
-const ArticleList: FunctionComponent = function() {
+const ArticleList: FunctionComponent<ArticleListProps> = function({ articles }) {
   return <ArticleListWrapper>
-    <ArticleDetail {...ARTICLE_DETAIL_DATA} />
-    <ArticleDetail {...ARTICLE_DETAIL_DATA} />
-    <ArticleDetail {...ARTICLE_DETAIL_DATA} />
-    <ArticleDetail {...ARTICLE_DETAIL_DATA} />
+    {articles.map(
+      ({
+         node: { id, frontmatter },
+       }: ArticleListItemType) => (
+        <ArticleDetail
+          {...frontmatter}
+          link="https://www.google.co.kr/"
+          key={id}
+        />
+      ),
+    )}
   </ArticleListWrapper>;
 };
 
