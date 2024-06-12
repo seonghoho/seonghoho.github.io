@@ -8,93 +8,108 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  // 사이트 메타태그
-  siteMetadata: {
-    title: `Seonghoho Dev log`,
-    description: `Seongho's Developer Blog and Portfolio`,
-    author: `ChoiSeongho`,
-    siteUrl: `https://seonghoho.github.io/`,
-  },
-  plugins: [
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        allExtensions: true,
-      },
+    // 사이트 메타태그
+    siteMetadata: {
+        title: `Seonghoho Dev log`,
+        description: `Seongho's Developer Blog and Portfolio`,
+        author: `ChoiSeongho`,
+        siteUrl: `https://seonghoho.github.io/`,
     },
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `contents`,
-        path: `${__dirname}/contents`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/static`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: ['auto', 'webp'],
-          quality: 100,
-          placeholder: 'blurred',
+    plugins: [
+        {
+            // TypeScript를 지원합니다.
+            resolve: 'gatsby-plugin-typescript',
+            options: {
+                isTSX: true,
+                allExtensions: true,
+            },
         },
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-smartypants',
+        // Emotion을 사용하여 CSS-in-JS 스타일을 적용합니다.
+        `gatsby-plugin-emotion`,
+        // React Helmet을 사용하여 HTML head 요소를 관리합니다.
+        `gatsby-plugin-react-helmet`,
+        {
+            // 파일 시스템에서 컨텐츠를 소스합니다.
+            resolve: `gatsby-source-filesystem`,
             options: {
-              dashes: 'oldschool',
+                name: `contents`,
+                path: `${__dirname}/contents`,
             },
-          },
-          {
-            resolve: 'gatsby-remark-prismjs',
+        },
+        {
+            // 파일 시스템에서 이미지를 소스합니다.
+            resolve: `gatsby-source-filesystem`,
             options: {
-              classPrefix: 'language-',
+                name: `images`,
+                path: `${__dirname}/static`,
             },
-          },
-          {
-            resolve: 'gatsby-remark-images',
+        },
+        {
+            // 이미지 처리 플러그인으로 이미지를 최적화합니다.
+            resolve: `gatsby-plugin-sharp`,
             options: {
-              maxWidth: 768,
-              quality: 100,
-              withWebp: true,
+                defaults: {
+                    formats: ['auto', 'webp'],
+                    quality: 100,
+                    placeholder: 'blurred',
+                },
             },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {},
-          },
-          {
-            resolve: 'gatsby-remark-external-links',
+        },
+        // 이미지 변환 플러그인으로 이미지 처리 기능을 제공합니다.
+        `gatsby-transformer-sharp`,
+        // Gatsby 이미지 플러그인으로 최적화된 이미지 로딩을 제공합니다.
+        `gatsby-plugin-image`,
+        {
+            // Markdown 파일을 HTML로 변환합니다.
+            resolve: `gatsby-transformer-remark`,
             options: {
-              target: '_blank',
-              rel: 'nofollow',
+                plugins: [
+                    {
+                        // Markdown 텍스트를 더 스마트하게 처리합니다.
+                        resolve: 'gatsby-remark-smartypants',
+                        options: {
+                            dashes: 'oldschool',
+                        },
+                    },
+                    {
+                        // 코드 블록에 구문 강조를 적용합니다.
+                        resolve: 'gatsby-remark-prismjs',
+                        options: {
+                            classPrefix: 'language-',
+                        },
+                    },
+                    {
+                        // Markdown 이미지 태그를 최적화된 이미지로 변환합니다.
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 768,
+                            quality: 100,
+                            withWebp: true,
+                        },
+                    },
+                    {
+                        // 링크된 파일을 복사합니다.
+                        resolve: 'gatsby-remark-copy-linked-files',
+                        options: {},
+                    },
+                    {
+                        // 외부 링크를 새로운 탭에서 열리도록 설정합니다.
+                        resolve: 'gatsby-remark-external-links',
+                        options: {
+                            target: '_blank',
+                            rel: 'nofollow',
+                        },
+                    },
+                    {
+                        // 캐노니컬 URL을 설정합니다.
+                        resolve: 'gatsby-plugin-canonical-urls',
+                        options: {
+                            siteUrl: 'https://seonghoho.github.io/',
+                            stripQueryString: true,
+                        },
+                    },
+                ],
             },
-          },
-          {
-            resolve: 'gatsby-plugin-canonical-urls',
-            options: {
-              siteUrl: 'https://seonghoho.github.io/',
-              stripQueryString: true,
-            },
-          },
-        ],
-      },
-    },
-  ],
+        },
+    ],
 };
