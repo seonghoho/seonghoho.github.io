@@ -12,7 +12,7 @@ module.exports = {
   siteMetadata: {
     title: `Seonghoho Dev log`,
     description: `Seongho's Developer Blog and Portfolio`,
-    author: `@ChoiSeongho`,
+    author: `ChoiSeongho`,
     siteUrl: `https://seonghoho.github.io/`,
   },
   plugins: [
@@ -84,6 +84,13 @@ module.exports = {
             options: {
               target: '_blank',
               rel: 'nofollow',
+            },
+          },
+          {
+            resolve: 'gatsby-plugin-canonical-urls',
+            options: {
+              siteUrl: 'https://seonghoho.github.io/',
+              stripQueryString: true,
             },
           },
         ],
