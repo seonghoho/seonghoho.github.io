@@ -1,7 +1,4 @@
 import React, { FC, useMemo } from 'react'
-import styled from '@emotion/styled'
-import GlobalStyle from 'components/Common/GlobalStyle'
-import Footer from 'components/Common/Footer'
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList'
 import Introduction from 'components/Main/Introduction'
 import ArticleList from 'components/Main/ArticleList'
@@ -9,6 +6,7 @@ import { graphql } from 'gatsby'
 import { ArticleListItemType } from '../types/ArticleDetailType'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
+import Template from 'components/Common/Template'
 
 type IndexPageProps = {
   location: {
@@ -25,12 +23,6 @@ type IndexPageProps = {
     }
   }
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`
 
 const IndexPage: FC<IndexPageProps> = function ({
   location: { search },
@@ -73,16 +65,14 @@ const IndexPage: FC<IndexPageProps> = function ({
   )
 
   return (
-    <Container>
-      <GlobalStyle />
+    <Template>
       <Introduction profileImage={gatsbyImageData} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
       />
       <ArticleList selectedCategory={selectedCategory} articles={edges} />
-      <Footer />
-    </Container>
+    </Template>
   )
 }
 
@@ -99,6 +89,9 @@ export const getArticleList = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary
