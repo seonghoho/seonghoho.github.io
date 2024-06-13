@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import ArticleHeadInfo from 'components/Article/ArticleHeadInfo'
 
 type GatsbyImgProps = {
   image: IGatsbyImageData
@@ -9,6 +10,9 @@ type GatsbyImgProps = {
 }
 
 type ArticleHeadProps = {
+  title: string
+  date: string
+  categories: string[]
   thumbnail: IGatsbyImageData
 }
 
@@ -29,11 +33,15 @@ const BackgroundImage = styled((props: GatsbyImgProps) => (
 `
 
 const ArticleHead: FunctionComponent<ArticleHeadProps> = function ({
+  title,
+  date,
+  categories,
   thumbnail,
 }) {
   return (
     <ArticleHeadWrapper>
       <BackgroundImage image={thumbnail} alt="thumbnail" />
+      <ArticleHeadInfo title={title} date={date} categories={categories} />
     </ArticleHeadWrapper>
   )
 }

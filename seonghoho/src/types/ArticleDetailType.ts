@@ -21,3 +21,10 @@ export type ArticleListItemType = {
     frontmatter: ArticleFrontmatterType
   }
 }
+
+export type ArticlePageItemType = {
+  node: {
+    html: string
+    frontmatter: ArticleFrontmatterType
+  }
+}
