@@ -15,6 +15,9 @@ export type ArticleFrontmatterType = {
 export type ArticleListItemType = {
   node: {
     id: string
+    fields: {
+      slug: string
+    }
     frontmatter: ArticleFrontmatterType
   }
 }

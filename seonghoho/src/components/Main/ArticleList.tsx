@@ -49,13 +49,17 @@ const ArticleList: FunctionComponent<ArticleListProps> = function ({
     useInfiniteScroll(selectedCategory, articleListData)
   return (
     <ArticleListWrapper ref={containerRef}>
-      {articleList.map(({ node: { id, frontmatter } }: ArticleListItemType) => (
-        <ArticleDetail
-          {...frontmatter}
-          link="https://www.google.co.kr/"
-          key={id}
-        />
-      ))}
+      {articleList.map(
+        ({
+          node: {
+            id,
+            fields: { slug },
+            frontmatter,
+          },
+        }: ArticleListItemType) => (
+          <ArticleDetail {...frontmatter} link={slug} key={id} />
+        ),
+      )}
     </ArticleListWrapper>
   )
 }
