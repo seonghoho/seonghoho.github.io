@@ -28,32 +28,50 @@ const useInfiniteScroll = function (
             ? categories.includes(selectedCategory)
             : true,
       ),
-    [selectedCategory],
-  )
-
-  const observer: IntersectionObserver = new IntersectionObserver(
-    (entries, observer) => {
-      if (!entries[0].isIntersecting) return
-
-      setCount(value => value + 1)
-      observer.disconnect()
-    },
+    [selectedCategory, articles],
   )
 
   useEffect(() => setCount(1), [selectedCategory])
 
   useEffect(() => {
-    if (
-      NUMBER_OF_ITEMS_PER_PAGE * count >= articleListByCategory.length ||
-      containerRef.current === null ||
-      containerRef.current.children.length === 0
-    )
-      return
+    if (typeof window !== 'undefined') {
+      const observer: IntersectionObserver = new IntersectionObserver(
+        (entries, observer) => {
+          if (!entries[0].isIntersecting) return
 
-    observer.observe(
-      containerRef.current.children[containerRef.current.children.length - 1],
-    )
-  }, [count, selectedCategory])
+          setCount(value => value + 1)
+          observer.disconnect()
+        },
+      )
+
+      if (
+        NUMBER_OF_ITEMS_PER_PAGE * count >= articleListByCategory.length ||
+        containerRef.current === null ||
+        containerRef.current.children.length === 0
+      ) {
+        return () => {} // 빈 정리 함수 반환
+      }
+
+      observer.observe(
+        containerRef.current.children[containerRef.current.children.length - 1],
+      )
+
+      return () => {
+        if (
+          containerRef.current !== null &&
+          containerRef.current.children.length > 0
+        ) {
+          observer.unobserve(
+            containerRef.current.children[
+              containerRef.current.children.length - 1
+            ],
+          )
+        }
+      }
+    } else {
+      return () => {} // 빈 정리 함수 반환
+    }
+  }, [count, selectedCategory, articleListByCategory.length])
 
   return {
     containerRef,
