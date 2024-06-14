@@ -105,6 +105,7 @@ export const getArticleList = graphql`
         description
         siteUrl
       }
+    }
     allMarkdownRemark(
       sort: {
         fields: [frontmatter___date, frontmatter___title]
