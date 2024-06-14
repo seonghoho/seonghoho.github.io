@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { ArticlePageItemType } from '../types/ArticleDetailType' // 바로 아래에서 정의할 것입니다
 import Template from '../components/Common/Template'
 import ArticleHead from '../components/Article/ArticleHead'
+import ArticleContent from 'components/Article/ArticleContent'
 
 type ArticleTemplateProps = {
   data: {
@@ -40,6 +41,7 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
         categories={categories}
         thumbnail={gatsbyImageData}
       />
+      <ArticleContent html={html} />
     </Template>
   )
 }
