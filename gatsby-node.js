@@ -80,9 +80,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // Import Article Template Component
-  const PostTemplateComponent = path.resolve(
+  const ArticleTemplateComponent = path.resolve(
     __dirname,
-    'src/templates/post_template.tsx',
+    'src/templates/article_template.tsx',
   )
 
   // Page Generating Function
@@ -93,7 +93,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }) => {
     const pageOptions = {
       path: slug,
-      component: PostTemplateComponent,
+      component: ArticleTemplateComponent,
       context: { slug },
     }
 
