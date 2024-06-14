@@ -42,6 +42,14 @@ module.exports = {
       },
     },
 
+    // robot.txt 추가하는 플러그인
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+
     {
       // 파일 시스템에서 컨텐츠를 소스합니다.
       resolve: `gatsby-source-filesystem`,
