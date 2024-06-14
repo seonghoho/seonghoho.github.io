@@ -26,8 +26,13 @@ module.exports = {
     },
     // Emotion을 사용하여 CSS-in-JS 스타일을 적용합니다.
     `gatsby-plugin-emotion`,
+
     // React Helmet을 사용하여 HTML head 요소를 관리합니다.
     `gatsby-plugin-react-helmet`,
+
+    // Sitemap 추가
+    'gatsby-plugin-sitemap',
+
     // 표준 페이지를 지정합니다.
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -36,6 +41,7 @@ module.exports = {
         stripQueryString: true,
       },
     },
+
     {
       // 파일 시스템에서 컨텐츠를 소스합니다.
       resolve: `gatsby-source-filesystem`,
@@ -44,6 +50,7 @@ module.exports = {
         path: `${__dirname}/contents`,
       },
     },
+
     {
       // 파일 시스템에서 이미지를 소스합니다.
       resolve: `gatsby-source-filesystem`,
@@ -52,6 +59,7 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
+
     {
       // 이미지 처리 플러그인으로 이미지를 최적화합니다.
       resolve: `gatsby-plugin-sharp`,
@@ -63,8 +71,10 @@ module.exports = {
         },
       },
     },
+
     // 이미지 변환 플러그인으로 이미지 처리 기능을 제공합니다.
     `gatsby-transformer-sharp`,
+
     // Gatsby 이미지 플러그인으로 최적화된 이미지 로딩을 제공합니다.
     `gatsby-plugin-image`,
     {
