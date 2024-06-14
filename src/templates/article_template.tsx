@@ -4,6 +4,7 @@ import { ArticlePageItemType } from '../types/ArticleDetailType' // 바로 아�
 import Template from '../components/Common/Template'
 import ArticleHead from '../components/Article/ArticleHead'
 import ArticleContent from 'components/Article/ArticleContent'
+import CommentWidget from 'components/Article/CommentWidget'
 
 type ArticleTemplateProps = {
   data: {
@@ -42,6 +43,7 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
         thumbnail={gatsbyImageData}
       />
       <ArticleContent html={html} />
+      <CommentWidget />
     </Template>
   )
 }
