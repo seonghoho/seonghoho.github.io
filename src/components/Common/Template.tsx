@@ -12,7 +12,7 @@ type TemplateProps = {
   children: ReactNode
 }
 
-const Container = styled.div`
+const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -47,6 +47,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
         <meta name="twitter:image" content={image} />
         <meta name="twitter:site" content="@seonghoho" />
         <meta name="twitter:creator" content="@seonghoho" />
+        <meta
+          name="google-site-verification"
+          content="ahKAZy_ZEdSmV6z6SSPmL5QXxkCGCelAec7GlpKb02g"
+        />
+        <html lang="ko" />
       </Helmet>
 
       <GlobalStyle />
