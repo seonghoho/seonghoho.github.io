@@ -10,9 +10,15 @@
     "noImplicitReturns": true,
     "baseUrl": "./src",
     "paths": {
-      "components/*": ["./components/*"],
-      "utils/*": ["./utils/*"],
-      "hooks/*": ["./hooks/*"]
+      "components/*": [
+        "./components/*"
+      ],
+      "utils/*": [
+        "./utils/*"
+      ],
+      "hooks/*": [
+        "./hooks/*"
+      ]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -20,7 +26,10 @@
     "resolveJsonModule": true
   },
   "include": [
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    "src/types/declarations.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
