@@ -9,6 +9,7 @@ import { ArticleListItemType } from '../types/ArticleDetailType'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from '../components/Common/Template'
+import NavBar from 'components/Common/NavBar'
 
 type IndexPageProps = {
   location: {
@@ -85,6 +86,7 @@ const IndexPage: FC<IndexPageProps> = function ({
       url={siteUrl}
       image={publicURL}
     >
+      <NavBar />
       <Introduction profileImage={gatsbyImageData} />
       <CategoryList
         selectedCategory={selectedCategory}

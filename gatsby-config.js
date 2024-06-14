@@ -10,7 +10,7 @@
 module.exports = {
   // 사이트 메타태그
   siteMetadata: {
-    title: `Seonghoho Dev log`,
+    title: `Seongho's Dev Log`,
     description: `Seongho's Developer Blog and Portfolio`,
     author: `ChoiSeongho`,
     siteUrl: `https://seonghoho.github.io/`,
