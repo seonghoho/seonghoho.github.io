@@ -12,12 +12,16 @@ type ArticleTemplateProps = {
       edges: ArticlePageItemType[] // 존재하지 않는 타입이므로 에러가 발생하지만 일단 작성해주세요
     }
   }
+  location: {
+    href: string
+  }
 }
 
 const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
   data: {
     allMarkdownRemark: { edges },
   },
+  location: { href },
 }) {
   const {
     node: {
@@ -29,13 +33,14 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
         categories,
         thumbnail: {
           childImageSharp: { gatsbyImageData },
+          publicURL,
         },
       },
     },
   } = edges[0]
 
   return (
-    <Template>
+    <Template title={title} description={summary} url={href} image={publicURL}>
       <ArticleHead
         title={title}
         date={date}
@@ -65,6 +70,7 @@ export const queryMarkdownDataBySlug = graphql`
               childImageSharp {
                 gatsbyImageData
               }
+              publicURL
             }
           }
         }

@@ -9,6 +9,7 @@ export type ArticleFrontmatterType = {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData
     }
+    publicURL: string
   }
 }
 
