@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import NavBar from 'components/Common/NavBar'
 import { graphql } from 'gatsby'
 import Template from 'components/Common/Template'
+import styled from '@emotion/styled'
 
 type IndexPageProps = {
   data: {
@@ -17,6 +18,14 @@ type IndexPageProps = {
     }
   }
 }
+
+const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 100px 0;
+`
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   data: {
@@ -34,6 +43,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       image={publicURL}
     >
       <NavBar />
+
+      <Content>메인화면 제작중입니다용가리</Content>
     </Template>
   )
 }
