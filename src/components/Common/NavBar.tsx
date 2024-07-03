@@ -23,7 +23,7 @@ const Logo = styled.img`
 
 const NavItem = styled.div`
   padding: 1vw;
-  font-weight: bolder;
+  font-weight: 900;
 
   &:hover {
     cursor: pointer;

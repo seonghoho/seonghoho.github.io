@@ -19,11 +19,36 @@ type GatsbyLinkProps = {
   to: string
 } & CategoryItemProps
 
+const RowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 768px;
+`
+
+const SelectedCategoryCount = styled.div`
+  margin: 10px;
+  font-weight: 500;
+`
+
+const SelectedCategory = styled.div`
+  display: flex;
+  margin: 20px 0;
+  font-size: 36px;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+`
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 768px;
-  margin: 100px auto 0;
+  margin: 40px auto;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -55,17 +80,28 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
   selectedCategory,
   categoryList,
 }) {
+  const selectedCategoryCount = categoryList[selectedCategory] || 0
+
   return (
     <CategoryListWrapper>
-      {Object.entries(categoryList).map(([name, count]) => (
+      {/* 카테고리 목록 */}
+      {Object.entries(categoryList).map(([name]) => (
         <CategoryItem
-          to={`/?category=${name}`}
+          to={`/blog/?category=${name}`}
           active={name === selectedCategory}
           key={name}
         >
-          #{name} ({count})
+          {name}
         </CategoryItem>
       ))}
+
+      {/* 현재 카테고리 */}
+      <RowDiv>
+        <SelectedCategory>{selectedCategory}</SelectedCategory>
+        <SelectedCategoryCount>
+          {selectedCategoryCount}posts
+        </SelectedCategoryCount>
+      </RowDiv>
     </CategoryListWrapper>
   )
 }
