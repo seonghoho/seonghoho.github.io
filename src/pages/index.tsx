@@ -3,6 +3,8 @@ import NavBar from 'components/Common/NavBar'
 import { graphql } from 'gatsby'
 import Template from 'components/Common/Template'
 import styled from '@emotion/styled'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+import Introduction from 'components/Main/Introduction'
 
 type IndexPageProps = {
   data: {
@@ -14,6 +16,9 @@ type IndexPageProps = {
       }
     }
     file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData
+      }
       publicURL: string
     }
   }
@@ -32,7 +37,10 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     site: {
       siteMetadata: { title, description, siteUrl },
     },
-    file: { publicURL },
+    file: {
+      childImageSharp: { gatsbyImageData },
+      publicURL,
+    },
   },
 }) {
   return (
@@ -43,6 +51,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       image={publicURL}
     >
       <NavBar />
+      <Introduction profileImage={gatsbyImageData} />
 
       <Content>메인화면 제작중입니다용가리</Content>
     </Template>
@@ -61,6 +70,9 @@ export const getInformation = graphql`
       }
     }
     file(name: { eq: "profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 120, height: 120)
+      }
       publicURL
     }
   }

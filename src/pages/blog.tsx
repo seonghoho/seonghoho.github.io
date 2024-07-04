@@ -2,11 +2,9 @@ import React, { FC, useMemo } from 'react'
 import CategoryList, {
   CategoryListProps,
 } from '../components/Main/CategoryList'
-import Introduction from '../components/Main/Introduction'
 import ArticleList from '../components/Main/ArticleList'
 import { graphql } from 'gatsby'
 import { ArticleListItemType } from '../types/ArticleDetailType'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from '../components/Common/Template'
 import NavBar from 'components/Common/NavBar'
@@ -27,9 +25,9 @@ type BlogPageProps = {
       edges: ArticleListItemType[]
     }
     file: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData
-      }
+      // childImageSharp: {
+      //   gatsbyImageData: IGatsbyImageData
+      // }
       publicURL: string
     }
   }
@@ -43,7 +41,7 @@ const BlogPage: FC<BlogPageProps> = function ({
     },
     allMarkdownRemark: { edges },
     file: {
-      childImageSharp: { gatsbyImageData },
+      // childImageSharp: { gatsbyImageData },
       publicURL,
     },
   },
@@ -87,7 +85,7 @@ const BlogPage: FC<BlogPageProps> = function ({
       image={publicURL}
     >
       <NavBar />
-      <Introduction profileImage={gatsbyImageData} />
+      {/*<Introduction profileImage={gatsbyImageData} />*/}
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -135,9 +133,6 @@ export const getArticleList = graphql`
       }
     }
     file(name: { eq: "profile-image" }) {
-      childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
-      }
       publicURL
     }
   }
