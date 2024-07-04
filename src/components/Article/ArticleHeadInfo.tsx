@@ -16,11 +16,11 @@ const ArticleHeadInfoWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
-  color: #ffffff;
+  color: #222;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     width: 100%;
-    padding: 40px 20px;
+    padding: 20px 35px;
   }
 `
 
@@ -30,13 +30,17 @@ const PrevPageIcon = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
+  background: #222;
+  color: #fff;
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-  @media (max-width: 768px) {
+  &:hover {
+    box-shadow: 2px 2px 10px #222;
+  }
+
+  @media (max-width: 800px) {
     width: 30px;
     height: 30px;
     font-size: 18px;
@@ -55,7 +59,7 @@ const Title = styled.div`
   font-size: 45px;
   font-weight: 800;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 30px;
   }
 `
@@ -68,8 +72,8 @@ const ArticleData = styled.div`
   font-size: 18px;
   font-weight: 700;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (max-width: 800px) {
+    //flex-direction: column;
     align-items: flex-start;
     font-size: 15px;
     font-weight: 400;

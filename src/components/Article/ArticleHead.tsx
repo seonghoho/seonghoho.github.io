@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 import ArticleHeadInfo from './ArticleHeadInfo'
 
-type GatsbyImgProps = {
-  image: IGatsbyImageData
-  alt: string
-  className?: string
-}
+// type GatsbyImgProps = {
+//   image: IGatsbyImageData
+//   alt: string
+//   className?: string
+// }
 
 type ArticleHeadProps = {
   title: string
@@ -19,36 +19,36 @@ type ArticleHeadProps = {
 const ArticleHeadWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
 
-  @media (max-width: 768px) {
-    height: 300px;
+  @media (max-width: 800px) {
+    height: 200px;
   }
 `
 
-const BackgroundImage = styled((props: GatsbyImgProps) => (
-  <GatsbyImage {...props} style={{ position: 'absolute' }} />
-))`
-  z-index: -1;
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  filter: brightness(0.25);
-
-  @media (max-width: 768px) {
-    height: 300px;
-  }
-`
+// const BackgroundImage = styled((props: GatsbyImgProps) => (
+//   <GatsbyImage {...props} style={{ position: 'absolute' }} />
+// ))`
+//   z-index: -1;
+//   width: 100%;
+//   height: 400px;
+//   object-fit: cover;
+//   filter: brightness(0.25);
+//
+//   @media (max-width: 800px) {
+//     height: 300px;
+//   }
+// `
 
 const ArticleHead: FunctionComponent<ArticleHeadProps> = function ({
   title,
   date,
   categories,
-  thumbnail,
+  // thumbnail,
 }) {
   return (
     <ArticleHeadWrapper>
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
+      {/*<BackgroundImage image={thumbnail} alt="thumbnail" />*/}
       <ArticleHeadInfo title={title} date={date} categories={categories} />
     </ArticleHeadWrapper>
   )
