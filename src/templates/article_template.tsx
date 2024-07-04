@@ -5,6 +5,7 @@ import Template from '../components/Common/Template'
 import ArticleHead from '../components/Article/ArticleHead'
 import ArticleContent from 'components/Article/ArticleContent'
 import CommentWidget from 'components/Article/CommentWidget'
+import NavBar from 'components/Common/NavBar'
 
 type ArticleTemplateProps = {
   data: {
@@ -31,25 +32,33 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
         summary, // 나중에 사용할 예정입니다!
         date,
         categories,
-        thumbnail: {
-          childImageSharp: { gatsbyImageData },
-          publicURL,
-        },
+        thumbnail,
       },
     },
   } = edges[0]
 
+  const gatsbyImageData = thumbnail?.childImageSharp?.gatsbyImageData
+  const publicURL = thumbnail?.publicURL
+
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
-      <ArticleHead
+    <div>
+      <NavBar />
+      <Template
         title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-      />
-      <ArticleContent html={html} />
-      <CommentWidget />
-    </Template>
+        description={summary}
+        url={href}
+        image={publicURL}
+      >
+        <ArticleHead
+          title={title}
+          date={date}
+          categories={categories}
+          thumbnail={gatsbyImageData}
+        />
+        <ArticleContent html={html} />
+        <CommentWidget />
+      </Template>
+    </div>
   )
 }
 
