@@ -54,7 +54,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       >
         <Introduction profileImage={gatsbyImageData} />
 
-        <Content>메인화면 제작중입니다용가리</Content>
+        <Content>메인화면 제작중...</Content>
       </Template>
     </div>
   )
