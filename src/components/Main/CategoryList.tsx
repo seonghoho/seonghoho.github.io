@@ -30,6 +30,7 @@ const RowDiv = styled.div`
 const SelectedCategoryCount = styled.div`
   margin: 10px;
   font-weight: 500;
+  align-items: center;
 `
 
 const SelectedCategory = styled.div`
@@ -38,21 +39,16 @@ const SelectedCategory = styled.div`
   font-size: 36px;
   font-weight: 700;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 50px;
-    padding: 0 20px;
+  @media (max-width: 800px) {
   }
 `
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 768px;
-  margin: 40px auto;
+  width: 1024px;
+  margin: 20px auto;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 50px;
+  @media (max-width: 1050px) {
     padding: 0 20px;
   }
 `
@@ -71,7 +67,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
     margin-right: 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 15px;
   }
 `

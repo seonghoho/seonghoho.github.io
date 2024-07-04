@@ -18,23 +18,27 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 768px;
-  height: 400px;
+  width: 1024px;
+  height: 300px;
   margin: 0 auto;
+  padding: 0 20px;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 300px;
-    padding: 0 20px;
+  @media (max-width: 1050px) {
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: 800px) {
+    height: 250px;
   }
 `
 
 const SubTitle = styled.div`
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
+  padding: 0 0 10px 0;
 
-  @media (max-width: 768px) {
-    font-size: 15px;
+  @media (max-width: 800px) {
+    font-size: 20px;
   }
 `
 
@@ -43,7 +47,7 @@ const Title = styled.div`
   font-size: 35px;
   font-weight: 700;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 25px;
   }
 `
@@ -56,8 +60,8 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
       <Wrapper>
         <ProfileImage profileImage={profileImage} />
         <div>
-          <SubTitle>Nice To Meet You.</SubTitle>
-          <Title>I'm Junior Frontend Developer Choi Seongho.</Title>
+          <SubTitle>정직함과 열정으로 무장한,</SubTitle>
+          <Title>FrontEnd 개발자 최성호입니다.</Title>
         </div>
       </Wrapper>
     </Background>
