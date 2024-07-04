@@ -15,11 +15,22 @@ const FooterWrapper = styled.footer`
   }
 `
 
+const FooterDiv = styled.div`
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`
+
 const Footer: FunctionComponent = function () {
+  const handleClick = () => {
+    window.location.href = 'https://github.com/seonghoho'
+  }
   return (
     <FooterWrapper>
-      Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2024 Developer Seongho, Powered By Gatsby.
+      <FooterDiv onClick={handleClick}>
+        © 2024 Developer ChoiSeongho. All Rights Reserved.
+      </FooterDiv>
     </FooterWrapper>
   )
 }
