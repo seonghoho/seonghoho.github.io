@@ -44,17 +44,19 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   },
 }) {
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <div>
       <NavBar />
-      <Introduction profileImage={gatsbyImageData} />
+      <Template
+        title={title}
+        description={description}
+        url={siteUrl}
+        image={publicURL}
+      >
+        <Introduction profileImage={gatsbyImageData} />
 
-      <Content>메인화면 제작중입니다용가리</Content>
-    </Template>
+        <Content>메인화면 제작중입니다용가리</Content>
+      </Template>
+    </div>
   )
 }
 

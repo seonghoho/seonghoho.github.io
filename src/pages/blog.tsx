@@ -78,20 +78,22 @@ const BlogPage: FC<BlogPageProps> = function ({
   )
 
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <div>
       <NavBar />
-      {/*<Introduction profileImage={gatsbyImageData} />*/}
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
-      <ArticleList selectedCategory={selectedCategory} articles={edges} />
-    </Template>
+      <Template
+        title={title}
+        description={description}
+        url={siteUrl}
+        image={publicURL}
+      >
+        {/*<Introduction profileImage={gatsbyImageData} />*/}
+        <CategoryList
+          selectedCategory={selectedCategory}
+          categoryList={categoryList}
+        />
+        <ArticleList selectedCategory={selectedCategory} articles={edges} />
+      </Template>
+    </div>
   )
 }
 

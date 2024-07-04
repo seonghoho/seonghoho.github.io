@@ -3,14 +3,25 @@ import styled from '@emotion/styled'
 import { navigate } from 'gatsby'
 import SeonghoLogo from '../../images/SlimLogo.svg'
 
-const Container = styled.nav`
+const NavDiv = styled.nav`
+  width: 100vw;
+  height: 65px;
+  position: fixed;
+  background-color: #fff;
+  border-bottom: #d9d9d9 solid 1px;
   // 가로 정렬
+  display: flex;
+  top: 0;
+  flex-direction: row;
+  z-index: 100;
+`
+
+const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 1024px;
-  height: 65px;
   margin: 0 auto;
 
   @media (max-width: 1050px) {
@@ -44,15 +55,17 @@ const NavItem = styled.div`
 `
 const NavBar: FunctionComponent = () => {
   return (
-    <Container>
-      <LogoDiv onClick={() => navigate('/')}>
-        <Logo src={SeonghoLogo} />
-      </LogoDiv>
-      <NavList>
-        <NavItem onClick={() => navigate('/')}>About</NavItem>
-        <NavItem onClick={() => navigate('/blog')}>BLOG</NavItem>
-      </NavList>
-    </Container>
+    <NavDiv>
+      <Container>
+        <LogoDiv onClick={() => navigate('/')}>
+          <Logo src={SeonghoLogo} />
+        </LogoDiv>
+        <NavList>
+          <NavItem onClick={() => navigate('/')}>About me</NavItem>
+          <NavItem onClick={() => navigate('/blog')}>Blog</NavItem>
+        </NavList>
+      </Container>
+    </NavDiv>
   )
 }
 
