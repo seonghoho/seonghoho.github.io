@@ -138,21 +138,29 @@ module.exports = {
       },
     },
     // {
-    //   // 폰트 적용
-    //   resolve: `gatsby-omni-font-loader`,
+    //   resolve: `gatsby-plugin-google-fonts`,
     //   options: {
-    //     enableListener: true,
-    //     preconnect: [
-    //       `https://fonts.googleapis.com`,
-    //       `https://fonts.gstatic.com`,
-    //     ],
-    //     web: [
-    //       {
-    //         name: `Noto Sans Korean`,
-    //         file: `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap`,
-    //       },
-    //     ],
+    //     fonts: [`Noto+Sans+KR\:100,200,300,400,500,600,700,800,900`],
+    //     display: 'swap',
     //   },
     // },
+
+    {
+      // 폰트 적용
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Noto Sans Korean`,
+            file: `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap`,
+          },
+        ],
+      },
+    },
   ],
 }
