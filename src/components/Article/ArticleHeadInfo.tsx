@@ -15,7 +15,7 @@ const ArticleHeadInfoWrapper = styled.div`
   width: 768px;
   height: 100%;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 30px 0;
   color: #222;
 
   @media (max-width: 800px) {
@@ -27,22 +27,22 @@ const ArticleHeadInfoWrapper = styled.div`
 const PrevPageIcon = styled.div`
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: #222;
+  background: #333;
   color: #fff;
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
   &:hover {
-    box-shadow: 2px 2px 10px #222;
+    box-shadow: 2px 2px 10px #333;
   }
 
   @media (max-width: 800px) {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     font-size: 18px;
   }
 `
@@ -56,6 +56,8 @@ const Title = styled.div`
   white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  height: auto;
+  margin: 10px 0;
   font-size: 45px;
   font-weight: 800;
 
