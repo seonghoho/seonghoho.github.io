@@ -25,6 +25,10 @@ const RowDiv = styled.div`
   justify-content: left;
   align-items: center;
   width: 768px;
+
+  @media (max-width: 800px) {
+    width: 0 auto;
+  }
 `
 
 const SelectedCategoryCount = styled.div`
@@ -45,10 +49,12 @@ const SelectedCategory = styled.div`
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 1024px;
+`
+const CategoryDiv = styled.div`
   margin: 20px auto;
-
+  width: 1024px;
   @media (max-width: 1050px) {
+    width: 0 auto;
     padding: 0 20px;
   }
 `
@@ -79,18 +85,19 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
   const selectedCategoryCount = categoryList[selectedCategory] || 0
 
   return (
-    <CategoryListWrapper>
-      {/* 카테고리 목록 */}
-      {Object.entries(categoryList).map(([name]) => (
-        <CategoryItem
-          to={`/blog/?category=${name}`}
-          active={name === selectedCategory}
-          key={name}
-        >
-          {name}
-        </CategoryItem>
-      ))}
-
+    <CategoryDiv>
+      <CategoryListWrapper>
+        {/* 카테고리 목록 */}
+        {Object.entries(categoryList).map(([name]) => (
+          <CategoryItem
+            to={`/blog/?category=${name}`}
+            active={name === selectedCategory}
+            key={name}
+          >
+            {name}
+          </CategoryItem>
+        ))}
+      </CategoryListWrapper>
       {/* 현재 카테고리 */}
       <RowDiv>
         <SelectedCategory>{selectedCategory}</SelectedCategory>
@@ -98,7 +105,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
           {selectedCategoryCount}posts
         </SelectedCategoryCount>
       </RowDiv>
-    </CategoryListWrapper>
+    </CategoryDiv>
   )
 }
 
