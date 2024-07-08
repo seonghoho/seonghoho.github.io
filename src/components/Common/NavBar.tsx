@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { navigate } from 'gatsby'
 import SeonghoLogo from '../../images/SlimLogo.svg'
 
+// nav 태그 div
 const NavDiv = styled.nav`
   width: 100vw;
   height: 65px;
@@ -30,12 +31,12 @@ const Container = styled.div`
   }
 `
 const NavList = styled.div`
-  // 가로 정렬
   display: flex;
   flex-direction: row;
   justify-content: end;
 `
 const LogoDiv = styled.div`
+  margin-bottom: -10px;
   &:hover {
     cursor: pointer;
   }

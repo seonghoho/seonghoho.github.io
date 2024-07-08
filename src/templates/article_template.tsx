@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
-import { ArticlePageItemType } from '../types/ArticleDetailType' // 바로 아래에서 정의할 것입니다
+import { ArticlePageItemType } from '../types/ArticleDetailType'
 import Template from '../components/Common/Template'
 import ArticleHead from '../components/Article/ArticleHead'
 import ArticleContent from 'components/Article/ArticleContent'
@@ -27,13 +27,7 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
   const {
     node: {
       html,
-      frontmatter: {
-        title,
-        summary, // 나중에 사용할 예정입니다!
-        date,
-        categories,
-        thumbnail,
-      },
+      frontmatter: { title, summary, date, categories, thumbnail },
     },
   } = edges[0]
 

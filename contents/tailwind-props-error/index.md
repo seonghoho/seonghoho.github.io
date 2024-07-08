@@ -1,7 +1,7 @@
 ---
 date: '2024-07-04'
 title: 'Tailwind CSS 에서 동적 클래스 할당할 때 발생한 에러'
-categories: [ 'Tailwind', 'Error', 'Props' ]
+categories: ['Tailwind', 'Error', 'Props']
 summary: 'Tailwind css에서 동적 클래스 사용 시 에러 발생한다. 원인이 무엇인지 해결 방법을 알아보자.'
 thumbnail: ''
 ---
@@ -45,7 +45,7 @@ Tailwind는 처음 렌더링할 때 존재하는 className만 수정할 수 있�
 <br>
 
 ```js
-<div className="text-red text-{error ? 'xl' : '4xl'} " / >
+<div className="text-red text-{error ? 'xl' : '4xl'} " />
 ```
 
 Tailwind는 렌더링 될 때 완전한 형태의 className만을 인식한다.
