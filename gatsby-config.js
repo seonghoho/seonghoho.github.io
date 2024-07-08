@@ -134,6 +134,20 @@ module.exports = {
               stripQueryString: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              // 인라인 코드 블록 (`code`) 에는 별도의 하이라이팅을 하지 않겠다는 설정
+              noInlineHighlight: true,
+            },
+          },
+          // {
+          //   resolve: `gatsby-remark-highlight-code`,
+          //   options: {
+          //     terminal: 'carborn',
+          //     theme: 'blackboard',
+          //   },
+          // },
         ],
       },
     },
