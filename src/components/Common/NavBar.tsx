@@ -12,7 +12,8 @@ const NavDiv = styled.nav<{
   height: 65px;
   position: fixed;
   background-color: ${props =>
-    props.isScrolled || !props.isMain ? '#fff' : 'transparent'};
+    !props.isScrolled && props.isMain ? 'transparent' : '#fff'};
+  color: ${props => (!props.isScrolled && props.isMain ? '#fff' : '#333')};
   border-bottom: ${props => (props.isMain ? '0' : 'solid 1px #d9d9d9')};
   display: flex;
   top: 0;
