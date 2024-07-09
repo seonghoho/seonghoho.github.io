@@ -7,14 +7,22 @@ type ProfileImageProps = {
 }
 
 const ProfileImageWrapper = styled(GatsbyImage)`
-  width: 120px;
-  height: 120px;
+  width: 50%;
+  height: 80%;
   margin-bottom: 30px;
-  border-radius: 50%;
+  border-radius: 20px;
+
+  @media (max-width: 1050px) {
+  }
 
   @media (max-width: 800px) {
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    height: 40vh;
+  }
+
+  @media (max-width: 450px) {
+    /* width: 80%; */
+    height: 60%;
   }
 `
 

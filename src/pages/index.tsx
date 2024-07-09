@@ -5,6 +5,7 @@ import Template from 'components/Common/Template'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Introduction from 'components/Portfolio/Introduction'
+import Summary from 'components/Portfolio/Summary'
 
 type IndexPageProps = {
   data: {
@@ -53,7 +54,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         image={publicURL}
       >
         <Introduction profileImage={gatsbyImageData} />
-
+        <Summary />
         <Content>메인화면 제작중...</Content>
       </Template>
     </div>
