@@ -108,9 +108,11 @@ module.exports = {
             // Markdown 이미지 태그를 최적화된 이미지로 변환합니다.
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 768,
-              quality: 100,
-              withWebp: true,
+              maxWidth: 1024, // 최대 너비를 더 크게 설정
+              quality: 100, // 최고 품질 설정
+              withWebp: true, // WebP 포맷 사용
+              showCaptions: true, // 캡션 표시
+              linkImagesToOriginal: false, // 원본 이미지로 링크하지 않음
             },
           },
           {

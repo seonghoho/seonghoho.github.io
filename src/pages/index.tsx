@@ -74,7 +74,7 @@ export const getInformation = graphql`
     }
     file(name: { eq: "profile-image" }) {
       childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
+        gatsbyImageData(width: 800, height: 800)
       }
       publicURL
     }
