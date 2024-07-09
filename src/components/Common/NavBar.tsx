@@ -11,7 +11,8 @@ const NavDiv = styled.nav<{
   width: 100vw;
   height: 65px;
   position: fixed;
-  background-color: ${props => (props.isScrolled ? '#fff' : 'transparent')};
+  background-color: ${props =>
+    props.isScrolled || !props.isMain ? '#fff' : 'transparent'};
   border-bottom: ${props => (props.isMain ? '0' : 'solid 1px #d9d9d9')};
   display: flex;
   top: 0;
@@ -68,7 +69,8 @@ const NavBar = () => {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY
-    if (scrollTop > 0) {
+    const windowHeight = window.innerHeight
+    if (scrollTop > windowHeight) {
       setIsScrolled(true)
     } else {
       setIsScrolled(false)
