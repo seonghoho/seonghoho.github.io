@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Template from 'components/Common/Template'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import Introduction from 'components/Main/Introduction'
+import Introduction from 'components/Portfolio/Introduction'
 
 type IndexPageProps = {
   data: {
