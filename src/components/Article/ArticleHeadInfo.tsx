@@ -15,12 +15,14 @@ const ArticleHeadInfoWrapper = styled.div`
   width: 768px;
   height: 100%;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 40px 0;
   color: #222;
+
+  border-bottom: solid 1px #d9d9d9;
 
   @media (max-width: 800px) {
     width: 100%;
-    padding: 20px 35px;
+    padding: 40px 35px;
   }
 `
 
@@ -57,12 +59,13 @@ const Title = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   height: auto;
-  margin: 10px 0;
-  font-size: 45px;
+  margin: 20px 0;
+  font-size: 40px;
   font-weight: 800;
 
   @media (max-width: 800px) {
     font-size: 30px;
+    margin: 10px 0;
   }
 `
 
@@ -73,6 +76,7 @@ const ArticleData = styled.div`
   margin-top: 10px;
   font-size: 18px;
   font-weight: 700;
+  height: auto;
 
   @media (max-width: 800px) {
     //flex-direction: column;

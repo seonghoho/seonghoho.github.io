@@ -22,7 +22,7 @@ const ArticleHeadWrapper = styled.div`
   height: 300px;
 
   @media (max-width: 800px) {
-    height: 250px;
+    height: auto;
   }
 `
 

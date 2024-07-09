@@ -11,18 +11,18 @@ const MarkdownRenderer = styled.div`
   flex-direction: column;
   width: 768px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0;
   word-break: break-all;
 
   // Markdown Style
-  line-height: 1.8;
+  line-height: 2;
   font-size: 16px;
   font-weight: 400;
 
   // Apply Padding Attribute to All Elements
 
   p {
-    padding: 3px 0;
+    padding: 5px 0;
   }
 
   // Adjust Heading Element Style
@@ -31,13 +31,17 @@ const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 40px;
+  }
+
+  * + h4 {
+    margin-top: 20px;
   }
 
   hr + h1,
@@ -123,8 +127,8 @@ const MarkdownRenderer = styled.div`
   // Markdown Responsive Design
   @media (max-width: 800px) {
     width: 100%;
-    padding: 80px 35px;
-    line-height: 1.6;
+    padding: 60px 35px;
+    line-height: 1.8;
     font-size: 14px;
 
     h1 {
@@ -139,12 +143,16 @@ const MarkdownRenderer = styled.div`
       font-size: 17px;
     }
 
+    h4 {
+      font-size: 15px;
+    }
+
     img {
       width: 100%;
     }
 
     hr {
-      margin: 50px 0;
+      margin: 40px 0;
     }
   }
 `
