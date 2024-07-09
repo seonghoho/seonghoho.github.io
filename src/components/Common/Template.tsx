@@ -1,8 +1,9 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, ReactNode, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import GlobalStyle from './GlobalStyle'
 import Footer from './Footer'
 import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
 
 type TemplateProps = {
   title: string
@@ -12,11 +13,11 @@ type TemplateProps = {
   children: ReactNode
 }
 
-const Container = styled.main`
+const Container = styled.main<{ isMain: boolean }>`
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 65px;
+  margin-top: ${props => (props.isMain ? '0' : '65px')};
 `
 
 const Template: FunctionComponent<TemplateProps> = function ({
@@ -26,8 +27,15 @@ const Template: FunctionComponent<TemplateProps> = function ({
   image,
   children,
 }) {
+  const location = useLocation()
+  const [main, useMain] = useState<boolean>(false)
+
+  useEffect(() => {
+    location.pathname === '/' ? useMain(true) : useMain(false)
+  }, [])
+
   return (
-    <Container>
+    <Container isMain={main}>
       <Helmet>
         <title>{title}</title>
 
