@@ -67,8 +67,8 @@ const NavItem = styled.div`
 `
 
 const NavBar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500)
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
 
   const handleScroll = () => {
     const scrollTop = window.scrollY
