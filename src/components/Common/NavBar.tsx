@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { navigate } from 'gatsby'
 import SeonghoLogo from '../../images/SlimLogo.svg'
+import StrokeLogo from '../../images/StrokeLogo.svg'
 import { useLocation } from '@reach/router'
 
 const NavDiv = styled.nav<{
@@ -67,6 +68,7 @@ const NavItem = styled.div`
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500)
 
   const handleScroll = () => {
     const scrollTop = window.scrollY
@@ -78,10 +80,16 @@ const NavBar = () => {
     }
   }
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 500)
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
@@ -97,7 +105,7 @@ const NavBar = () => {
     <NavDiv isScrolled={isScrolled} isMain={main}>
       <Container>
         <LogoDiv onClick={() => navigate('/')}>
-          <Logo src={SeonghoLogo} />
+          {isMobile ? <Logo src={StrokeLogo} /> : <Logo src={SeonghoLogo} />}
         </LogoDiv>
         <NavList>
           <NavItem onClick={() => navigate('/')}>About me</NavItem>
