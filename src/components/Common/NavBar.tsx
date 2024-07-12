@@ -105,7 +105,11 @@ const NavBar = () => {
     <NavDiv isScrolled={isScrolled} isMain={main}>
       <Container>
         <LogoDiv onClick={() => navigate('/')}>
-          {isMobile ? <Logo src={StrokeLogo} /> : <Logo src={SeonghoLogo} />}
+          {isMobile ? (
+            <Logo src={StrokeLogo} alt="logo" />
+          ) : (
+            <Logo src={SeonghoLogo} alt="logo" />
+          )}
         </LogoDiv>
         <NavList>
           <NavItem onClick={() => navigate('/')}>About me</NavItem>
