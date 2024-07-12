@@ -16,7 +16,7 @@ const ArticleHeadInfoWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 40px 0;
-  color: #222;
+  color: rgb(51, 51, 51);
 
   border-bottom: solid 1px #d9d9d9;
 
@@ -36,7 +36,7 @@ const PrevPageIcon = styled.div`
   color: #fff;
   font-size: 22px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   &:hover {
     box-shadow: 2px 2px 10px #333;
@@ -60,12 +60,15 @@ const Title = styled.div`
   -webkit-box-orient: vertical;
   height: auto;
   margin: 20px 0;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 800;
 
   @media (max-width: 800px) {
     font-size: 30px;
     margin: 10px 0;
+  }
+  @media (max-width: 400px) {
+    font-size: 25px;
   }
 `
 
