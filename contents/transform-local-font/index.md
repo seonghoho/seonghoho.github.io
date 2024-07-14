@@ -8,7 +8,7 @@ thumbnail: 'light-house.png'
 
 ## 개요
 
-기존 github.io 블로그에는 `@emotion`을 사용해 프로젝트에 style을 적용하고 있다. 
+기존 github.io 블로그에는 `@emotion`을 사용해 프로젝트에 style을 적용하고 있다.
 
 성능 최적화를 위해 많은 SSR 방식의 Gatsby를 사용하고 있다.
 
@@ -37,6 +37,7 @@ url로 불러오던 웹 폰트를 local 파일을 불러오는 방식으로 바�
 [Noto Sans Kr 구글 폰트 바로가기](https://fonts.google.com/noto/specimen/Noto+Sans+KR)
 
 ### 2. Font 파일을 프로젝트에 fonts 라는 디렉토리를 생성해서 추가한다.
+
 ![vscode-fonts](vscode-fonts.png)
 
 위 사진처럼 추가하면 된다.
@@ -79,21 +80,16 @@ const GlobalStyle: FunctionComponent = function () {
 export default GlobalStyle
 ```
 
-아래는 변경한 글로벌 스타일
+```typescript
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+```
+
+이 부분 대신 아래 font-face를 넣는다.
 
 ```typescript
-import React, { FunctionComponent } from 'react'
-import { css, Global } from '@emotion/react'
 // 폰트 파일 import
 import NotoSansKRThin from '../../fonts/NotoSansKR-Thin.ttf'
-import NotoSansKRExtraLight from '../../fonts/NotoSansKR-ExtraLight.ttf'
-import NotoSansKRLight from '../../fonts/NotoSansKR-Light.ttf'
-import NotoSansKRRegular from '../../fonts/NotoSansKR-Regular.ttf'
-import NotoSansKRMedium from '../../fonts/NotoSansKR-Medium.ttf'
-import NotoSansKRSemiBold from '../../fonts/NotoSansKR-SemiBold.ttf'
-import NotoSansKRBold from '../../fonts/NotoSansKR-Bold.ttf'
-import NotoSansKRExtraBold from '../../fonts/NotoSansKR-ExtraBold.ttf'
-import NotoSansKRBlack from '../../fonts/NotoSansKR-Black.ttf'
 
 const defaultStyle = css`
   @font-face {
@@ -102,101 +98,6 @@ const defaultStyle = css`
     font-weight: 100;
     font-style: normal;
   }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRExtraLight}) format('truetype');
-    font-weight: 200;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRLight}) format('truetype');
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRRegular}) format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRMedium}) format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRSemiBold}) format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRBold}) format('truetype');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRExtraBold}) format('truetype');
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans KR';
-    src: url(${NotoSansKRBlack}) format('truetype');
-    font-weight: 900;
-    font-style: normal;
-  }
-
-  * {
-    font-family:
-      'Noto Sans KR',
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      'Open Sans',
-      'Helvetica Neue',
-      sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html,
-  body,
-  #___gatsby {
-    height: 100%;
-  }
-
-  a,
-  a:hover {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-  }
-`
-
-const GlobalStyle: FunctionComponent = function () {
-  return <Global styles={defaultStyle} />
-}
-
-export default GlobalStyle
 ```
 
 ### 포인트
@@ -211,6 +112,41 @@ export default GlobalStyle
     font-style: normal;
   }
 ```
+
+## 또 다시 문제 발생..🚨🚨🚨
+
+다시 배포하고 light house를 확인했는데,,,
+
+![light-house-2](light-house-2.png)
+
+아.. 변경 전에는 88점이었는데,, 73점으로 하락했다..
+
+원인을 파악해서 다시 수정해보자..ㅋㅋ
+
+![problem](problem.png)
+
+이 두 부분이 문제인 것 같다.
+
+1. Font 로딩이 완료되기 전, 기본 Font로 미리 보여줬다가 변경하도록 하는 로직을 추가하자.
+
+2. NotoSansKR ttf 파일의 크기가 5MB가 넘는다. 용량을 줄이는 방법을 찾아보자.
+
+
+```typescript
+  @font-face {
+    font-family: 'Pretendard';
+    src: url(${PretendardThin}) format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+```
+
+`font-display: swap;`  이 코드를 작성하면 기본 폰트 먼저 보여주다가 로딩 끝나면 변경된다.
+
+그리고 파일 크기가 작은 `pretendard woff2` 파일들로 변경해봤다.
+
+![vscode-pretendard](vscode-pretendard.png)
 
 ## 결론
 
