@@ -3,7 +3,7 @@ date: '2024-07-17'
 title: '주소창에 URL 입력 시 일어나는 일'
 categories: ['CS', 'DOM', 'FrontEnd']
 summary: '주소창에 URL을 입력했을 때 일어나는 일을 간략하게, 자세하게 확인해보자.'
-thumbnail: 'browser_enter_url_course.png'
+thumbnail: 'browser-enter-url-course.png'
 ---
 
 # 주소창에 URL 입력 시 일어나는 일
@@ -14,7 +14,7 @@ thumbnail: 'browser_enter_url_course.png'
 
 면접에서 간단하게 기술할 요약 버전과 조금 더 자세히 이해할 수 있는 자세한 버전으로 작성해보겠습니다.
 
-![브라우저 입력 시 일어나는 과정 요약](browser_enter_url_course.png)
+![브라우저 입력 시 일어나는 과정 요약](browser-enter-url-course.png)
 
 ## 1. 요약 버전
 
@@ -101,7 +101,7 @@ Cache에 없다면, 브라우저가 URL의 도메인을 호스팅하는 IP 주�
 - **헤더(Header)**: 요청에 대한 부가 정보를 포함합니다.
 - **본문(Body)**: POST와 같은 메서드에서는 본문에 데이터를 포함할 수 있습니다.
 
-![http_state_code](http_state_code.png)
+![http_state_code](http-state-code.png)
 
 ### 6. 서버 응답
 
@@ -117,27 +117,27 @@ Cache에 없다면, 브라우저가 URL의 도메인을 호스팅하는 IP 주�
 
 ### 7. 브라우저 렌더링
 
-![render_path](render_path.png)
+![render_path](render-path.png)
 
 **7-1. DOM 트리 생성**
 
 - 브라우저가 응답받은 HTML을 파싱하여 DOM(Document Object Model) 트리를 생성합니다.
 - 이전 단계에서 통신을 통해 받아온 HTML 파일들은 바이트 형태로 전달됩니다.
 - 바이트 → 문자 → 토큰 → 노드 → DOM 트리로 전환하는 작업을 수행합니다.
-- ![dom_tree](dom_tree.png)
+- ![dom_tree](dom-tree.png)
 
 **7-2. CSSOM 트리 생성**
 
 - CSS를 파싱하여 CSSOM(CSS Object Model) 트리를 생성합니다.
 - DOM 트리와 같은 방식으로 객체 모델로 전환합니다.
 - CSS 규칙을 파싱하여 각 노드에 하향식으로 스타일을 적용합니다.
-- ![cssom_tree](cssom_tree.png)
+- ![cssom_tree](cssom-tree.png)
 
 **7-3. Render 트리 생성**
 
 - DOM과 스타일 정보를 결합하여 Render Tree를 생성합니다.
 - DOM 트리와 CSSOM 트리를 결합하여 각 요소가 화면에 어떻게 표시될 지를 결정합니다.
-- ![render_tree.png](render_tree.png)
+- ![render_tree.png](render-tree.png)
 
 **7-4. Layout 및 Paint**
 
