@@ -96,7 +96,6 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `standalone`,
-        icon: `static/favicon.ico`, // 이 경로에 파비콘 파일을 추가하세요.
       },
     },
 
