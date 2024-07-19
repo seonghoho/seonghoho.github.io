@@ -96,6 +96,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `standalone`,
+        icon: `static/favicon-16x16.png`, // png 파일이어야 에러 안남
       },
     },
 
