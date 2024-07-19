@@ -35,9 +35,12 @@ const MarkdownRenderer = styled.div`
   }
 
   * + h1,
-  * + h2,
+  * + h2 {
+    margin-top: 20px;
+  }
+
   * + h3 {
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   * + h4 {
