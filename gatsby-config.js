@@ -10,10 +10,37 @@
 module.exports = {
   // 사이트 메타태그
   siteMetadata: {
-    title: `Seongho's Dev Log`,
-    description: `Seongho's Developer Blog and Portfolio`,
+    title: `CSH's Portfolio`,
+    description: `최성호 | 프론트엔드 개발자 포트폴리오 , 기술 블로그`,
     author: `ChoiSeongho`,
     siteUrl: `https://seonghoho.github.io/`,
+    headline: `최성호의 포트폴리오`,
+    basePath: `/`,
+    name: `Choi Seongho`,
+    version: `1.0.0`,
+    developer: `Choi Seongho`,
+    coauthorBusiness: `None`,
+    project: `Portfolio`,
+    url: `https://seonghoho.github.io/`,
+    message: `Welcome to my portfolio site!`,
+    keywords: `프론트엔드, 프론트엔드 개발자, 프론트엔드 개발자 포트폴리오, 프론트엔드 포트폴리오, Frontend Developer, Portfolio, ChoiSeongho`,
+    language: `ko`,
+    og: {
+      type: `website`,
+      title: `CSH's Portfolio`,
+      description: `최성호 | 프론트엔드 개발자 포트폴리오`,
+      url: `https://seonghoho.github.io/`,
+      image: `https://seonghoho.github.io/images/og-image.jpg`,
+    },
+    twitter: {
+      card: `summary_large_image`,
+      title: `CSH's Portfolio`,
+      description: `최성호 | 프론트엔드 개발자 포트폴리오`,
+      url: `https://seonghoho.github.io/`,
+      image: `https://seonghoho.github.io/images/twitter-image.jpg`,
+    },
+    robots: `index, follow`,
+    canonicalUrl: `https://seonghoho.github.io/`,
   },
   plugins: [
     {
@@ -56,6 +83,20 @@ module.exports = {
       options: {
         name: `contents`,
         path: `${__dirname}/contents`,
+      },
+    },
+
+    {
+      // 파비콘 추가하기 위한 매니페스트
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `CSH's Portfolio`,
+        short_name: `Portfolio`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#000000`,
+        display: `standalone`,
+        icon: `static/favicon.ico`, // 이 경로에 파비콘 파일을 추가하세요.
       },
     },
 
