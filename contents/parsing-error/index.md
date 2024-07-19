@@ -36,6 +36,8 @@ thumbnail: 'parsing-error.png'
 
 ## 해결방법
 
+### TypeScript 일 때
+
 parserOptions 에 루트 경로를 지정해주면 해결이 될 것 같다.
 
 #### 기존 컴파일러 옵션
@@ -50,7 +52,7 @@ parserOptions: {
 
 #### 변경한 컴파일러 옵션
 
-```jsx
+```tsx
 parserOptions: {
   project: './tsconfig.json',
   sourceType: 'module',
@@ -60,7 +62,58 @@ parserOptions: {
 
 tsconfigRootDir 옵션은 TypeScript 컴파일러가 tsconfig.json 파일을 찾는 기준 디렉토리를 명시적으로 설정하게 한다.
 
-이 옵션을 설정하지 않으면, 기본적으로 현재 작업 디렉토리를 기준으로 tsconfig.json 파일을 찾게 된다. \_\_dirname은 현재 파일의 디렉토리 경로를 나타내므로, 이를 설정하여 정확한 경로를 지정할 수 있다.
+이 옵션을 설정하지 않으면, 기본적으로 현재 작업 디렉토리를 기준으로 tsconfig.json 파일을 찾게 된다. \_\_dirname은 현재 파일의 디렉토리 경로를 나타내므로, 이를 설정하여 정확한 경로를 지정할
+수 있다.
+
+### JavaScript 일 때 `(24.07.19 추가)`
+
+JavaScript 프로젝트를 생성했다가, 바로 또 이 에러가 발생해서 적용하려는데, 잘 되지 않아 다른 방식으로 해결했다.
+
+```jsx
+{
+  "compilerOptions"
+:
+  {
+    "target"
+  :
+    "es5",
+      "module"
+  :
+    "esnext",
+      "baseUrl"
+  :
+    "./",
+      "moduleResolution"
+  :
+    "node",
+      "paths"
+  :
+    {
+      "@/*"
+    :
+      ["src/*"]
+    }
+  ,
+    "lib"
+  :
+    ["esnext", "dom", "dom.iterable", "scripthost"]
+  }
+,
+  "include"
+:
+  ["src/**/*"],
+    "exclude"
+:
+  ["node_modules"]
+}
+```
+
+```js
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+```
+
+이 부분을 넣으면 된다.
 
 ## 결론 및 회고
 
