@@ -6,6 +6,34 @@ import ArticleHead from '../components/Article/ArticleHead'
 import ArticleContent from 'components/Article/ArticleContent'
 import CommentWidget from 'components/Article/CommentWidget'
 import NavBar from 'components/Common/NavBar'
+// import styled from '@emotion/styled'
+
+// const ArticleBody = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   /* align-items: center; */
+//   width: 1024px;
+//   margin: 0 auto;
+
+//   @media (max-width: 1050px) {
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   @media (max-width: 768px) {
+//   }
+// `
+
+// const Category = styled.div`
+//   width: 100%;
+//   margin-top: 65px;
+//   border: 1px solid #333;
+
+//   @media (max-width: 1050px) {
+//     display: none;
+//   }
+// `
 
 type ArticleTemplateProps = {
   data: {
@@ -37,6 +65,8 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
   return (
     <div>
       <NavBar />
+      {/* <ArticleBody>
+        <Category>sadfsafs</Category> */}
       <Template
         title={title}
         description={summary}
@@ -52,6 +82,7 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
         <ArticleContent html={html} />
         <CommentWidget />
       </Template>
+      {/* </ArticleBody> */}
     </div>
   )
 }
