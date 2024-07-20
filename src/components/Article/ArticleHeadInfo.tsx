@@ -94,7 +94,9 @@ const ArticleHeadInfo: FunctionComponent<ArticleHeadInfoProps> = function ({
   date,
   categories,
 }) {
-  const goBackPage = () => window.history.back()
+  const goBackPage = () => {
+    window.location.href = 'https://seonghoho.github.io/blog/'
+  }
 
   return (
     <ArticleHeadInfoWrapper>
