@@ -3,8 +3,10 @@ date: '2024-07-17'
 title: '주소창에 URL 입력 시 일어나는 일'
 categories: ['CS', 'DOM', 'FrontEnd']
 summary: '주소창에 URL을 입력했을 때 일어나는 일을 간략하게, 자세하게 확인해보자.'
-thumbnail: 'browser-enter-url-course.png'
+thumbnail: 'browser-enter-url-course-thumbnail.png'
 ---
+
+![browser-enter-url-course-thumbnail](browser-enter-url-course-thumbnail.png)
 
 # 주소창에 URL 입력 시 일어나는 일
 
