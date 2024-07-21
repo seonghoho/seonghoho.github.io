@@ -61,7 +61,7 @@ const Title = styled.div`
   height: auto;
   margin: 20px 0;
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 700;
 
   @media (max-width: 800px) {
     font-size: 30px;

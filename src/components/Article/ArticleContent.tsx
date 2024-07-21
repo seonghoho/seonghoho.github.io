@@ -119,12 +119,13 @@ const MarkdownRenderer = styled.div`
 
   // 백틱으로  설정한 코드 블럭
   pre[class*='language-'] {
-    tab-size: 2;
-    font-family: 'Noto Sans KR', 'Fira Code', 'Courier New', Courier, monospace;
+    tab-size: 4;
+    font-family: 'Pretendard', 'Fira Code', 'Courier New', Courier, monospace;
     font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.6rem 0.3rem;
     margin: 0 0.2rem;
     color: #fff;
+    background-color: #5e5e5e;
   }
 
   // Markdown Responsive Design
