@@ -6,7 +6,7 @@ summary: '프로젝트 실행 시 어느 순간 모든 파일 첫 줄에서 Pars
 thumbnail: 'parsing-error-thumbnail.png'
 ---
 
-![parsing-error-thumbnail](prettier-error-thumbnail.png)
+![parsing-error-thumbnail](parsing-error-thumbnail.png)
 
 ## 개요
 
