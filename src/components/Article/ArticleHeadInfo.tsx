@@ -16,13 +16,16 @@ const ArticleHeadInfoWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 40px 0;
-  color: rgb(51, 51, 51);
+  color: #333333;
 
   border-bottom: solid 1px #d9d9d9;
 
   @media (max-width: 800px) {
     width: 100%;
-    padding: 40px 35px;
+    padding: 40px 25px;
+  }
+  @media (max-width: 500px) {
+    padding: 40px 20px;
   }
 `
 
