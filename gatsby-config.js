@@ -10,7 +10,7 @@
 module.exports = {
   // 사이트 메타태그
   siteMetadata: {
-    title: `CSH's Portfolio`,
+    title: `최성호 | 프론트엔드 포트폴리오`,
     description: `최성호 | 프론트엔드 개발자 포트폴리오 , 기술 블로그`,
     author: `ChoiSeongho`,
     siteUrl: `https://seonghoho.github.io/`,
@@ -27,14 +27,14 @@ module.exports = {
     language: `ko`,
     og: {
       type: `website`,
-      title: `CSH's Portfolio`,
+      title: `최성호 | 프론트엔드 포트폴리오`,
       description: `최성호 | 프론트엔드 개발자 포트폴리오`,
       url: `https://seonghoho.github.io/`,
       image: `https://seonghoho.github.io/images/og-image.jpg`,
     },
     twitter: {
       card: `summary_large_image`,
-      title: `CSH's Portfolio`,
+      title: `최성호 | 프론트엔드 포트폴리오`,
       description: `최성호 | 프론트엔드 개발자 포트폴리오`,
       url: `https://seonghoho.github.io/`,
       image: `https://seonghoho.github.io/images/twitter-image.jpg`,
