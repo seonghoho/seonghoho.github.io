@@ -3,8 +3,10 @@ date: '2024-07-13'
 title: 'Prettier error : End Of Line 에러 해결하기'
 categories: ['Prettier', 'Error', 'VSCode']
 summary: 'CRLF, LF 관련 설정을 바꿨는데도 CRLF error가 발생할 때 해결 방법'
-thumbnail: 'crlf-error-image.png'
+thumbnail: 'prettier-error-thumbnail.png'
 ---
+
+![prettier-error-thumbnail](prettier-error-thumbnail.png)
 
 ## 개요
 

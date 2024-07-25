@@ -3,8 +3,10 @@ date: '2024-07-04'
 title: 'Tailwind CSS 에서 동적 클래스 할당할 때 발생한 에러'
 categories: ['Tailwind', 'Error', 'Props']
 summary: 'Tailwind css에서 동적 클래스 사용 시 에러 발생한다. 원인이 무엇인지 해결 방법을 알아보자.'
-thumbnail: ''
+thumbnail: 'tailwind-props-error-thumbnail.png'
 ---
+
+![tailwind-props-error-thumbnail](tailwind-props-error-thumbnail.png)
 
 ## 개요
 

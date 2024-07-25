@@ -28,7 +28,7 @@ const Template: FunctionComponent<TemplateProps> = function ({
   children,
 }) {
   const location = useLocation()
-  const [main, useMain] = useState<boolean>(false)
+  const [main, useMain] = useState<boolean>(true)
 
   useEffect(() => {
     location.pathname === '/' ? useMain(true) : useMain(false)

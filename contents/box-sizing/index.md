@@ -3,8 +3,10 @@ date: '2024-07-19'
 title: 'box-sizing 꼭 알아야 하는 CSS 꿀팁'
 categories: ['CSS', 'FrontEnd', 'box-sizing']
 summary: '프론트엔드 이외에도 꼭 알아야 할 box-sizing CSS에 대해 알아보자.'
-thumbnail: 'box-sizing.png'
+thumbnail: 'box-sizing-thumbnail.png'
 ---
+
+![box-sizing-thumbnail](box-sizing-thumbnail.png)
 
 ## 개요
 

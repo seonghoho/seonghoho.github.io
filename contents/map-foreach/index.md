@@ -3,10 +3,10 @@ date: '2024-07-20'
 title: '[JS] forEach와 map의 차이점'
 categories: ['JavaScript', 'FrontEnd', 'method']
 summary: 'JavaScript에 존재하는 메서드 중 forEach와 map의 차이점을 알아보자.'
-thumbnail: 'forEach-map-thumb.png'
+thumbnail: 'forEach-map-thumbnail.png'
 ---
 
-![forEach-map-thumbnail](forEach-map-thumb.png)
+![forEach-map-thumbnail](forEach-map-thumbnail.png)
 
 ## 개요
 

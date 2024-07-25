@@ -3,8 +3,10 @@ date: '2024-07-14'
 title: '웹 폰트에서 로컬 폰트로 바꿔 적용하기'
 categories: ['CSS', 'WebFont', 'LocalFont']
 summary: 'URL로 불러왔던 Web Font를 로딩 최적화를 위해 Local Font로 바꾸기 위한 방법을 알아보자.'
-thumbnail: 'light-house.png'
+thumbnail: 'transform-localfont-thumbnail.png'
 ---
+
+![transform-localfont-thumbnail](transform-localfont-thumbnail.png)
 
 ## 개요
 
@@ -131,7 +133,6 @@ const defaultStyle = css`
 
 2. NotoSansKR ttf 파일의 크기가 5MB가 넘는다. 용량을 줄이는 방법을 찾아보자.
 
-
 ```typescript
   @font-face {
     font-family: 'Pretendard';
@@ -142,7 +143,7 @@ const defaultStyle = css`
   }
 ```
 
-`font-display: swap;`  이 코드를 작성하면 기본 폰트 먼저 보여주다가 로딩 끝나면 변경된다.
+`font-display: swap;` 이 코드를 작성하면 기본 폰트 먼저 보여주다가 로딩 끝나면 변경된다.
 
 그리고 파일 크기가 작은 `pretendard woff2` 파일들로 변경해봤다.
 
@@ -152,10 +153,10 @@ const defaultStyle = css`
 
 이렇게 진행을 하니, 성능이 개선되었다.
 
-..? 1점 개선되었는데.. 10점은 이미지 렌더링 문제 부분이라서 그 부분은 조만간 수정해보려 한다. ㅎ_ㅎ 
+..? 1점 개선되었는데.. 10점은 이미지 렌더링 문제 부분이라서 그 부분은 조만간 수정해보려 한다. ㅎ\_ㅎ
 
 ![light-house-3](light-house-3.png)
 
-고작 1점일 수 있겠지만, 확실히 사용자 접근성은 증가되었다는 것에 큰 의의를 두고, 조금이라도 더 나은 페이지가 되었다면 고생한 가치가 있다고 생각한다. 
+고작 1점일 수 있겠지만, 확실히 사용자 접근성은 증가되었다는 것에 큰 의의를 두고, 조금이라도 더 나은 페이지가 되었다면 고생한 가치가 있다고 생각한다.
 
 어제보다 오늘 더 나은 방향으로 발전하는 개발자가 됩시다~~
