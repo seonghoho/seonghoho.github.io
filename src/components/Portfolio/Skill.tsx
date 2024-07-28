@@ -3,13 +3,9 @@ import styled from '@emotion/styled'
 
 const Background = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-image: linear-gradient(320deg, #fff 0%, #91ffff67 100%);
   color: #444;
-
-  @media (max-width: 768px) {
-    height: calc(250vh);
-  }
 `
 
 const Wrapper = styled.div`
@@ -56,12 +52,15 @@ const BoxGrid = styled.div`
   grid-template-rows: 1fr 1fr;
   grid-gap: 20px;
   width: calc(1024px - 40px);
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 0; // auto를 제거
 
   @media (max-width: 1050px) {
     width: 100%;
     padding: 0 20px; // auto를 제거
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 20px;
   }
 
