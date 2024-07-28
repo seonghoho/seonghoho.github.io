@@ -27,14 +27,15 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.div<{ isVisible: boolean }>`
-  margin-top: 12vh;
-  font-size: 40px;
+  margin: 10vh 0;
+  font-size: 36px;
   font-weight: 600;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
 
   @media (max-width: 1050px) {
     font-size: 30px;
+    margin: 8vh 0;
   }
 
   @media (max-width: 730px) {
@@ -42,6 +43,7 @@ const Title = styled.div<{ isVisible: boolean }>`
   }
   @media (max-width: 500px) {
     font-size: 16px;
+    margin: 5vh 0;
   }
 `
 
