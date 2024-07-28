@@ -3,8 +3,13 @@ import styled from '@emotion/styled'
 
 const Background = styled.div`
   width: 100%;
+  height: 100vh;
   background-image: linear-gradient(320deg, #fff 0%, #91ffff67 100%);
   color: #444;
+
+  @media (max-width: 768px) {
+    height: calc(250vh);
+  }
 `
 
 const Wrapper = styled.div`
@@ -14,22 +19,17 @@ const Wrapper = styled.div`
   align-items: center;
 
   width: 1024px;
-  height: calc(100vh);
+  height: calc(100%);
   /* border: 1px solid #333; */
   margin: 0 auto;
-  padding: 0 20px;
 
   @media (max-width: 1050px) {
     width: calc(100% - 40px);
   }
-
-  @media (max-width: 800px) {
-    height: calc(200vh);
-  }
 `
 
 const Title = styled.div`
-  margin: 10vh 0;
+  margin: 5vh 0;
   font-size: 40px;
   font-weight: 600;
   opacity: 1;
@@ -40,10 +40,11 @@ const Title = styled.div`
     font-size: 35px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     margin: 5vh 0;
     font-size: 30px;
   }
+
   @media (max-width: 500px) {
     font-size: 24px;
   }
@@ -52,7 +53,8 @@ const Title = styled.div`
 const BoxGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px; // 명시적으로 값을 설정
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
   width: calc(1024px - 40px);
   margin: 0 auto;
   padding: 0; // auto를 제거
@@ -60,18 +62,20 @@ const BoxGrid = styled.div`
   @media (max-width: 1050px) {
     width: 100%;
     padding: 0 20px; // auto를 제거
-    grid-gap: 30px;
+    grid-gap: 20px;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0;
   }
 `
 
 const BoxTitle = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  padding-bottom: 20px;
   font-weight: 600;
   font-size: 20px;
 `
@@ -80,10 +84,15 @@ const BoxContent = styled.div`
   display: flex;
   justify-content: center;
   border: 1px solid #d9d9d9;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px 20px;
   margin: 5px 0;
   font-weight: 500;
+
+  @media (max-width: 800px) {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
 `
 const Box = styled.div`
   /* border: 1px solid #555; */
@@ -96,7 +105,7 @@ const Box = styled.div`
   width: 300px;
   height: auto;
   margin-bottom: 20px;
-  padding: 30px 20px;
+  padding: 50px 20px;
 
   transition:
     transform 0.3s ease,
@@ -111,12 +120,17 @@ const Box = styled.div`
     color: #555; /* BoxTitle의 색상을 호버 시 변경 */
     font-weight: 800;
   }
+  &:hover ${BoxContent} {
+    background-color: #eeeeee;
+    font-weight: 600;
+  }
 
   @media (max-width: 1050px) {
     width: 100%;
+    padding: 50px 20px;
   }
   @media (max-width: 800px) {
-    padding: 20px;
+    padding: 40px 20px;
   }
 `
 

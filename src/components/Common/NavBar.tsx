@@ -44,7 +44,7 @@ const NavList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: end;
-  margin-right: -2vw;
+  margin-right: -1vw;
 `
 
 const LogoDiv = styled.div`
