@@ -44,6 +44,7 @@ const NavList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: end;
+  margin-right: -2vw;
 `
 
 const LogoDiv = styled.div`
@@ -57,18 +58,26 @@ const Logo = styled.img`
   //padding: 0 1vw;
 `
 
-const NavItem = styled.div`
-  padding: 1vw 0 1vw 4vw;
+const NavItem = styled.div<{ isHidden: boolean }>`
+  padding: 20px 15px;
   font-weight: 600;
+  display: ${props => (props.isHidden ? 'none' : 'block')};
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 800px) {
+    padding: 20px 10px;
+  }
+  @media (max-width: 500px) {
+    padding: 20px 5px;
   }
 `
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
-  const [isMobile, setIsMobile] = useState<boolean>(false)
+  const [widthCategory, setWidthCategory] = useState<string>('large')
 
   const handleScroll = () => {
     const scrollTop = window.scrollY
@@ -81,12 +90,19 @@ const NavBar = () => {
   }
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 500)
+    const width = window.innerWidth
+    if (width <= 500) {
+      setWidthCategory('small')
+    } else if (width <= 800) {
+      setWidthCategory('medium')
+    } else {
+      setWidthCategory('large')
+    }
   }
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleResize)
+    handleResize()
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
@@ -99,21 +115,58 @@ const NavBar = () => {
 
   useEffect(() => {
     location.pathname === '/' ? useMain(true) : useMain(false)
-  }, [])
+  }, [location.pathname])
 
   return (
     <NavDiv isScrolled={isScrolled} isMain={main}>
       <Container>
         <LogoDiv onClick={() => navigate('/')}>
-          {isMobile ? (
+          {widthCategory !== 'large' ? (
             <Logo src={StrokeLogo} alt="logo" />
           ) : (
             <Logo src={SeonghoLogo} alt="logo" />
           )}
         </LogoDiv>
         <NavList>
-          <NavItem onClick={() => navigate('/')}>About me</NavItem>
-          <NavItem onClick={() => navigate('/blog')}>Blog</NavItem>
+          <NavItem onClick={() => navigate('/')} isHidden={false}>
+            About me
+          </NavItem>
+          <NavItem
+            onClick={() => navigate('/blog')}
+            isHidden={!(widthCategory === 'small')}
+          >
+            Blog
+          </NavItem>
+          <NavItem
+            onClick={() => navigate('/blog/?category=JavaScript')}
+            isHidden={widthCategory === 'small'}
+          >
+            JavaScript
+          </NavItem>
+          <NavItem
+            onClick={() => navigate('/blog/?category=TypeScript')}
+            isHidden={widthCategory === 'small'}
+          >
+            TypeScript
+          </NavItem>
+          <NavItem
+            onClick={() => navigate('/blog/?category=Vue')}
+            isHidden={widthCategory !== 'large'}
+          >
+            Vue
+          </NavItem>
+          <NavItem
+            onClick={() => navigate('/blog/?category=Error')}
+            isHidden={widthCategory !== 'large'}
+          >
+            Error
+          </NavItem>
+          <NavItem
+            onClick={() => navigate('/blog/?category=FrontEnd')}
+            isHidden={widthCategory !== 'large'}
+          >
+            FrontEnd
+          </NavItem>
         </NavList>
       </Container>
     </NavDiv>

@@ -14,14 +14,14 @@ type ArticleListProps = {
 const ArticleListWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 25px;
   width: 1024px;
   margin: 0 auto;
-  padding: 50px 0 100px;
+  padding: auto 0;
 
   @media (max-width: 1050px) {
     width: 100%;
-    padding: 50px 20px;
+    padding: 0 20px;
   }
 
   @media (max-width: 768px) {
