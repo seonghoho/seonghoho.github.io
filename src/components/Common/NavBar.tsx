@@ -3,23 +3,20 @@ import styled from '@emotion/styled'
 import { navigate } from 'gatsby'
 import SeonghoLogo from '../../images/SlimLogo.svg'
 import StrokeLogo from '../../images/StrokeLogo.svg'
-import { useLocation } from '@reach/router'
+// import { useLocation } from '@reach/router'
 
-const NavDiv = styled.nav<{
-  isScrolled: boolean
-  isMain: boolean
-}>`
+const NavDiv = styled.nav`
   width: 100vw;
   height: 65px;
   position: fixed;
-  background-color: ${props =>
-    !props.isScrolled && props.isMain ? 'transparent' : '#fff'};
-  color: ${props => (!props.isScrolled && props.isMain ? '#fff' : '#333')};
-  border-bottom: ${props => (props.isMain ? '0' : 'solid 1px #d9d9d9')};
+  background-color: #fff;
+  color: #333;
+  border-bottom: solid 1px #d9d9d9;
+  box-shadow: 2px 2px 6px #d9d9d9;
   display: flex;
   top: 0;
   flex-direction: row;
-  z-index: 100;
+  z-index: 10;
   transition:
     background-color 0.3s,
     border-bottom 0.3s;
@@ -76,18 +73,27 @@ const NavItem = styled.div<{ isHidden: boolean }>`
 `
 
 const NavBar = () => {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false)
   const [widthCategory, setWidthCategory] = useState<string>('large')
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY
-    const windowHeight = window.innerHeight
-    if (scrollTop > windowHeight) {
-      setIsScrolled(true)
-    } else {
-      setIsScrolled(false)
-    }
-  }
+  // 스크롤이 맨 위인지 확인하는 값
+  // const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  // const handleScroll = () => {
+  //   const scrollTop = window.scrollY
+  //   const windowHeight = window.innerHeight
+  //   if (scrollTop > windowHeight) {
+  //     setIsScrolled(true)
+  //   } else {
+  //     setIsScrolled(false)
+  //   }
+  // }
+
+  // 메인페이지 인지 확인하기 위한 로직
+  // const location = useLocation()
+  // const [main, useMain] = useState<boolean>(false)
+
+  // useEffect(() => {
+  //   location.pathname === '/' ? useMain(true) : useMain(false)
+  // }, [location.pathname])
 
   const handleResize = () => {
     const width = window.innerWidth
@@ -100,25 +106,18 @@ const NavBar = () => {
     }
   }
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    // window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleResize)
     handleResize()
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      // window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
     }
   }, [])
 
-  // 메인페이지 인지 확인하기 위한 로직
-  const location = useLocation()
-  const [main, useMain] = useState<boolean>(false)
-
-  useEffect(() => {
-    location.pathname === '/' ? useMain(true) : useMain(false)
-  }, [location.pathname])
-
   return (
-    <NavDiv isScrolled={isScrolled} isMain={main}>
+    <NavDiv>
+      {/* <NavDiv isScrolled={isScrolled} isMain={main}> */}
       <Container>
         <LogoDiv onClick={() => navigate('/')}>
           {widthCategory !== 'large' ? (
@@ -131,10 +130,7 @@ const NavBar = () => {
           <NavItem onClick={() => navigate('/')} isHidden={false}>
             About me
           </NavItem>
-          <NavItem
-            onClick={() => navigate('/blog')}
-            isHidden={!(widthCategory === 'small')}
-          >
+          <NavItem onClick={() => navigate('/blog')} isHidden={false}>
             Blog
           </NavItem>
           <NavItem
@@ -156,10 +152,10 @@ const NavBar = () => {
             Vue
           </NavItem>
           <NavItem
-            onClick={() => navigate('/blog/?category=Error')}
+            onClick={() => navigate('/blog/?category=React')}
             isHidden={widthCategory !== 'large'}
           >
-            Error
+            React
           </NavItem>
           <NavItem
             onClick={() => navigate('/blog/?category=FrontEnd')}
