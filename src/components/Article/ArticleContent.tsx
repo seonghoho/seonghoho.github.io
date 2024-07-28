@@ -88,7 +88,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Horizontal Rule style
 
   hr {
-    border: 1px solid #333333;
+    border: 1px solid #d9d9d9;
     margin: 100px 0;
   }
 
