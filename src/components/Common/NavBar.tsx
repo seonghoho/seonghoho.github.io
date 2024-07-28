@@ -58,7 +58,7 @@ const Logo = styled.img`
 `
 
 const NavItem = styled.div`
-  padding: 1vw;
+  padding: 1vw 0 1vw 4vw;
   font-weight: 600;
 
   &:hover {

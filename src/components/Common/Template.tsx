@@ -17,6 +17,7 @@ const Container = styled.main<{ isMain: boolean }>`
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin: 0 auto;
   margin-top: ${props => (props.isMain ? '0' : '65px')};
 `
 

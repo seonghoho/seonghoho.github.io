@@ -13,6 +13,7 @@ const MarkdownRenderer = styled.div`
   margin: 0 auto;
   padding: 50px 0;
   word-break: break-all;
+  color: #555555;
 
   // Markdown Style
   line-height: 2;
@@ -31,9 +32,9 @@ const MarkdownRenderer = styled.div`
   h2,
   h3,
   h4 {
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #333333;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #555555;
   }
 
   * + h1,
@@ -98,15 +99,32 @@ const MarkdownRenderer = styled.div`
     text-decoration: underline;
   }
 
+  // 이미지 스타일
+  figure {
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    text-align: center; /* 이미지 및 캡션 중앙 정렬 */
+  }
+
+  img {
+    width: 80%;
+  }
+
+  figcaption {
+    margin-top: 5px; /* 이미지와 캡션 사이의 여백 */
+    font-size: 14px; /* 캡션 폰트 크기 */
+    color: #888888; /* 캡션 텍스트 색상 */
+  }
+
   // 코드 블럭 스타일
   pre[class*='language-'] {
     margin: 5px 0 10px;
     padding: 30px;
     tab-size: 4;
     font-family: 'Pretendard', 'Fira Code', 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #787878;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
 
     border-radius: 5px; /* 코드 블럭 모서리 둥글게 */
     overflow-x: auto; /* 코드 블럭 가로 스크롤 */
@@ -125,11 +143,11 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'] {
     tab-size: 4;
     font-family: 'Pretendard', 'Fira Code', 'Courier New', Courier, monospace;
-    font-size: 1rem;
+    font-size: 16px;
     padding: 0.2rem 0.4rem 0.3rem;
     margin: 0 0.2rem;
-    color: #fff;
-    background-color: #787878;
+    color: #333;
+    background-color: #f5f5f5;
   }
 
   // Markdown Responsive Design
@@ -187,6 +205,20 @@ const MarkdownRenderer = styled.div`
       margin-left: 15px;
       padding: 10px 0;
     }
+
+    // 코드 블럭 스타일
+    pre[class*='language-'] {
+      margin: 5px 0 10px;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    // 백틱으로 인라인 코드 스타일
+    code[class*='language-'] {
+      font-size: 14px;
+      padding: 0.2rem 0.4rem 0.3rem;
+      margin: 0 0.2rem;
+    }
   }
 
   @media (max-width: 500px) {
@@ -223,6 +255,20 @@ const MarkdownRenderer = styled.div`
     ul {
       margin-left: 15px;
       padding: 5px 0;
+    }
+
+    // 코드 블럭 스타일
+    pre[class*='language-'] {
+      margin: 5px 0 10px;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    // 백틱으로 인라인 코드 스타일
+    code[class*='language-'] {
+      font-size: 14px;
+      padding: 0.2rem 0.4rem 0.3rem;
+      margin: 0 0.2rem;
     }
   }
 `
