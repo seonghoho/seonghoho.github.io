@@ -12,7 +12,7 @@ const ArticleDetailContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 20px 15px 30px;
 `
 
 const ArticleDetailWrapper = styled(Link)`
@@ -35,16 +35,27 @@ const Title = styled.div`
   text-overflow: ellipsis;
   white-space: normal;
   overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
+`
+
+const RowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 `
 
 const Date = styled.div`
   font-size: 14px;
   font-weight: 400;
-  opacity: 0.7;
+  margin-right: 10px;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
 `
 
 const Category = styled.div`
@@ -54,13 +65,17 @@ const Category = styled.div`
 `
 
 const CategoryItem = styled.div`
-  margin: 2.5px 5px;
-  padding: 3px 5px;
+  margin: 0 4px;
+  padding: 3px 6px;
   border-radius: 3px;
-  background: black;
-  font-size: 14px;
-  font-weight: 700;
+  background: #555;
+  font-size: 12px;
+  font-weight: 600;
   color: white;
+
+  @media (max-width: 500px) {
+    font-size: 10px;
+  }
 `
 
 const Summary = styled.div`
@@ -108,12 +123,14 @@ const ArticleDetail: FunctionComponent<ArticleDetailProps> = function ({
       )}
       <ArticleDetailContent>
         <Title>{title}</Title>
-        <Date>{date}</Date>
-        <Category>
-          {categories.map(item => (
-            <CategoryItem key={item}>{item}</CategoryItem>
-          ))}
-        </Category>
+        <RowDiv>
+          <Date>{date} | </Date>
+          <Category>
+            {categories.map(item => (
+              <CategoryItem key={item}>{item}</CategoryItem>
+            ))}
+          </Category>
+        </RowDiv>
         <Summary>{summary}</Summary>
       </ArticleDetailContent>
     </ArticleDetailWrapper>

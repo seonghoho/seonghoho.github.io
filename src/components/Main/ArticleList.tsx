@@ -24,7 +24,7 @@ const ArticleListWrapper = styled.div`
     padding: 0 20px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     grid-template-columns: 1fr;
   }
 `
