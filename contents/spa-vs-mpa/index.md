@@ -1,6 +1,6 @@
 ---
 date: '2024-07-31'
-title: 'SPA vs MPA 개념과 렌더링 방식 비교,(feat: SSR vs CSR)'
+title: 'SPA vs MPA 개념과 렌더링 방식 비교 (SSR vs CSR)'
 categories: ['FrontEnd', 'CS', 'Rendering']
 summary: 'SPA와 MPA 그리고 CSR과 SSR, 차이점과 장단점이 무엇인지 알아보자.'
 thumbnail: 'spa-vs-mpa-thumbnail.png'
