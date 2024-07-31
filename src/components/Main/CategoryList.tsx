@@ -45,14 +45,24 @@ const CategoryListWrapper = styled.div`
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<CategoryItemProps>`
-  margin-right: 20px;
-  padding: 5px 0;
-  font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
+  margin: 5px 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: ${({ active }) => (active ? '20px' : '18px')};
+  font-weight: ${({ active }) => (active ? '600' : '400')};
   cursor: pointer;
+  background-color: ${({ active }) => (active ? '#8c99ff' : '#e2e8f0')};
+  color: ${({ active }) => (active ? '#fff' : '#333')};
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  &:hover,
+  active {
+    background-color: #8c99ff;
+    color: #fff;
+    transition: 3ms;
   }
 
   @media (max-width: 800px) {
@@ -73,7 +83,7 @@ const SelectedCategory = styled.div`
   display: flex;
   margin: 20px 0;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 600;
 
   @media (max-width: 800px) {
   }
@@ -81,6 +91,8 @@ const SelectedCategory = styled.div`
 
 // 선택된 카테고리 갯수 div
 const SelectedCategoryCount = styled.div`
+  color: #246bff;
+  font-size: 20px;
   margin: 10px;
   font-weight: 500;
   align-items: center;
