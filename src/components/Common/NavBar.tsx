@@ -12,7 +12,7 @@ const NavDiv = styled.nav`
   background-color: #fff;
   color: #333;
   border-bottom: solid 1px #d9d9d9;
-  box-shadow: 2px 2px 6px #d9d9d9;
+  /* box-shadow: 2px 2px 6px #d9d9d9; */
   display: flex;
   top: 0;
   flex-direction: row;

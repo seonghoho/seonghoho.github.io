@@ -6,6 +6,7 @@ import ArticleHead from '../components/Article/ArticleHead'
 import ArticleContent from 'components/Article/ArticleContent'
 import CommentWidget from 'components/Article/CommentWidget'
 import NavBar from 'components/Common/NavBar'
+import styled from '@emotion/styled'
 // import styled from '@emotion/styled'
 
 // const ArticleBody = styled.div`
@@ -34,6 +35,20 @@ import NavBar from 'components/Common/NavBar'
 //     display: none;
 //   }
 // `
+
+const BGDiv = styled.div`
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 20px;
+  width: 820px;
+  height: 100%;
+  margin: 40px auto;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+`
 
 type ArticleTemplateProps = {
   data: {
@@ -73,14 +88,16 @@ const ArticleTemplate: FunctionComponent<ArticleTemplateProps> = function ({
         url={href}
         image={publicURL}
       >
-        <ArticleHead
-          title={title}
-          date={date}
-          categories={categories}
-          thumbnail={gatsbyImageData}
-        />
-        <ArticleContent html={html} />
-        <CommentWidget />
+        <BGDiv>
+          <ArticleHead
+            title={title}
+            date={date}
+            categories={categories}
+            thumbnail={gatsbyImageData}
+          />
+          <ArticleContent html={html} />
+          <CommentWidget />
+        </BGDiv>
       </Template>
       {/* </ArticleBody> */}
     </div>

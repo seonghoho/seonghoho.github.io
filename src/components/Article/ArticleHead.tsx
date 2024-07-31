@@ -20,12 +20,14 @@ const ArticleHeadWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 200px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 800px) {
     height: auto;
+    margin-top: 0;
   }
 `
 
