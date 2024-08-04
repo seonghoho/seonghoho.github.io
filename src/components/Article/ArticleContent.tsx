@@ -155,7 +155,7 @@ const MarkdownRenderer = styled.div`
     width: 100%;
     padding: 30px 25px;
     line-height: 1.8;
-    font-size: 14px;
+    font-size: 15px;
 
     * + h1,
     * + h2 {

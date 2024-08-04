@@ -16,7 +16,7 @@ type TemplateProps = {
 const Container = styled.main<{ isMain: boolean }>`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 65px);
   margin: 0 auto;
   margin-top: ${props => (props.isMain ? '0' : '65px')};
 `

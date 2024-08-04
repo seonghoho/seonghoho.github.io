@@ -21,6 +21,7 @@ const ArticleDetailWrapper = styled(Link)`
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   transition: 0.3s box-shadow;
+  background-color: #fff;
   cursor: pointer;
 
   &:hover {
