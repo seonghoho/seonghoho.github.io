@@ -54,11 +54,14 @@ const LogoDiv = styled.div`
 const Logo = styled.img`
   //padding: 0 1vw;
 `
+const RowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
-const NavItem = styled.div<{ isHidden: boolean }>`
+const NavItem = styled.div`
   padding: 20px 15px;
   font-weight: 600;
-  display: ${props => (props.isHidden ? 'none' : 'block')};
 
   &:hover {
     cursor: pointer;
@@ -73,7 +76,7 @@ const NavItem = styled.div<{ isHidden: boolean }>`
 `
 
 const NavBar = () => {
-  const [widthCategory, setWidthCategory] = useState<string>('large')
+  const [widthCategory, setWidthCategory] = useState<string>('')
 
   // 스크롤이 맨 위인지 확인하는 값
   // const [isScrolled, setIsScrolled] = useState<boolean>(false)
@@ -127,42 +130,37 @@ const NavBar = () => {
           )}
         </LogoDiv>
         <NavList>
-          <NavItem onClick={() => navigate('/')} isHidden={false}>
-            About me
-          </NavItem>
-          <NavItem onClick={() => navigate('/blog')} isHidden={false}>
-            Blog
-          </NavItem>
-          <NavItem
-            onClick={() => navigate('/blog/?category=JavaScript')}
-            isHidden={widthCategory === 'small'}
-          >
-            JavaScript
-          </NavItem>
-          <NavItem
-            onClick={() => navigate('/blog/?category=TypeScript')}
-            isHidden={widthCategory === 'small'}
-          >
-            TypeScript
-          </NavItem>
-          <NavItem
-            onClick={() => navigate('/blog/?category=Vue')}
-            isHidden={widthCategory !== 'large'}
-          >
-            Vue
-          </NavItem>
-          <NavItem
-            onClick={() => navigate('/blog/?category=React')}
-            isHidden={widthCategory !== 'large'}
-          >
-            React
-          </NavItem>
-          <NavItem
-            onClick={() => navigate('/blog/?category=FrontEnd')}
-            isHidden={widthCategory !== 'large'}
-          >
-            FrontEnd
-          </NavItem>
+          <NavItem onClick={() => navigate('/')}>About me</NavItem>
+          <NavItem onClick={() => navigate('/blog')}>Blog</NavItem>
+
+          {widthCategory !== 'small' ? (
+            <RowDiv>
+              <NavItem onClick={() => navigate('/blog/?category=JavaScript')}>
+                JavaScript
+              </NavItem>
+              <NavItem onClick={() => navigate('/blog/?category=TypeScript')}>
+                TypeScript
+              </NavItem>
+            </RowDiv>
+          ) : (
+            ''
+          )}
+
+          {widthCategory === 'large' ? (
+            <RowDiv>
+              <NavItem onClick={() => navigate('/blog/?category=Vue')}>
+                Vue
+              </NavItem>
+              <NavItem onClick={() => navigate('/blog/?category=React')}>
+                React
+              </NavItem>
+              <NavItem onClick={() => navigate('/blog/?category=FrontEnd')}>
+                FrontEnd
+              </NavItem>
+            </RowDiv>
+          ) : (
+            ''
+          )}
         </NavList>
       </Container>
     </NavDiv>
