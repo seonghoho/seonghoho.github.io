@@ -1,5 +1,5 @@
 ---
-date: '2024-08-06'
+date: '2024-08-07'
 title: 'Lint와 Linter에 대해 (feat: ESLint, Prettier)'
 categories: ['FrontEnd', 'ESLint']
 summary: '코드 품질을 향상시키기 위해 Lint와 Linter에 대해 알아보자.'
