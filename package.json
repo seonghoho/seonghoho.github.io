@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "seongho-frontend-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "FrontEnd developer portfolio and dev blog ",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Seongho Choi <chltjdgh3@gmail.com>",
   "dependencies": {
     "@deckdeckgo/highlight-code": "^3.6.0",
     "@emotion/react": "^11.11.4",
