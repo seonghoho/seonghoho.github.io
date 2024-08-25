@@ -73,6 +73,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://seonghoho.github.io/',
+        sitemap: 'https://seonghoho.github.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
