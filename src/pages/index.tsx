@@ -7,6 +7,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Introduction from 'components/Portfolio/Introduction'
 import Summary from 'components/Portfolio/Summary'
 import Skill from 'components/Portfolio/Skill'
+import CardList from 'components/Portfolio/Exercise/CardList'
 
 type IndexPageProps = {
   data: {
@@ -57,6 +58,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         <Introduction profileImage={gatsbyImageData} />
         <Summary />
         <Skill />
+        <CardList />
         <Content>메인화면 제작중...</Content>
       </Template>
     </div>
