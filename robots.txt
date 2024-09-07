@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /blog/?category=
 Sitemap: https://seonghoho.github.io/sitemap.xml
 Host: https://seonghoho.github.io
