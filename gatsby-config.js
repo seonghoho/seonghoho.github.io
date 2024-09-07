@@ -75,7 +75,13 @@ module.exports = {
       options: {
         host: 'https://seonghoho.github.io/',
         sitemap: 'https://seonghoho.github.io/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: ['/blog/?category='],
+          },
+        ],
       },
     },
 
