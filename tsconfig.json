@@ -20,6 +20,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.tsx", "src/types/declarations.d.ts", "src/components/Portfolio/Exercise/ElasticLine.tsx"],
+  "include": ["src/**/*.tsx", "src/types/declarations.d.ts", "src/components/Portfolio/Exercise/ElasticLine/ElasticLine.tsx"],
   "exclude": ["node_modules"]
 }

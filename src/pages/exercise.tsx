@@ -1,14 +1,11 @@
-import React, { FunctionComponent } from 'react'
 import NavBar from 'components/Common/NavBar'
-import { graphql } from 'gatsby'
 import Template from 'components/Common/Template'
-import styled from '@emotion/styled'
+import CardList from 'components/Portfolio/Exercise/CardList'
+import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import Introduction from 'components/Portfolio/Introduction'
-import Summary from 'components/Portfolio/Summary'
-import Skill from 'components/Portfolio/Skill'
+import { FunctionComponent } from 'react'
 
-type IndexPageProps = {
+type ExercisePageProps = {
   data: {
     site: {
       siteMetadata: {
@@ -26,25 +23,14 @@ type IndexPageProps = {
   }
 }
 
-const Content = styled.div`
-  display: flex;
-  justify-content: center;
-  font-weight: bolder;
-  font-size: 20px;
-  margin: 100px 0;
-`
-
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
+const ExercisePage: FunctionComponent<ExercisePageProps> = ({
   data: {
     site: {
       siteMetadata: { title, description, siteUrl },
     },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
+    file: { publicURL },
   },
-}) {
+}) => {
   return (
     <div>
       <NavBar />
@@ -54,16 +40,13 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         url={siteUrl}
         image={publicURL}
       >
-        <Introduction profileImage={gatsbyImageData} />
-        <Summary />
-        <Skill />
-        <Content>메인화면 제작중...</Content>
+        <CardList />
       </Template>
     </div>
   )
 }
 
-export default IndexPage
+export default ExercisePage
 
 export const getInformation = graphql`
   query getArticleList {
@@ -75,9 +58,6 @@ export const getInformation = graphql`
       }
     }
     file(name: { eq: "profile-image" }) {
-      childImageSharp {
-        gatsbyImageData(width: 800, height: 800)
-      }
       publicURL
     }
   }

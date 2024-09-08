@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import { navigate } from 'gatsby'
-import SeonghoLogo from '../../images/SlimLogo.svg'
 import StrokeLogo from '../../images/StrokeLogo.svg'
+// import SeonghoLogo from '../../images/SlimLogo.svg'
 // import { useLocation } from '@reach/router'
 
 const NavDiv = styled.nav`
@@ -76,7 +76,7 @@ const NavItem = styled.div`
 `
 
 const NavBar = () => {
-  const [widthCategory, setWidthCategory] = useState<string>('')
+  // const [widthCategory, setWidthCategory] = useState<string>('')
 
   // 스크롤이 맨 위인지 확인하는 값
   // const [isScrolled, setIsScrolled] = useState<boolean>(false)
@@ -98,41 +98,47 @@ const NavBar = () => {
   //   location.pathname === '/' ? useMain(true) : useMain(false)
   // }, [location.pathname])
 
-  const handleResize = () => {
-    const width = window.innerWidth
-    if (width <= 500) {
-      setWidthCategory('small')
-    } else if (width <= 800) {
-      setWidthCategory('medium')
-    } else {
-      setWidthCategory('large')
-    }
-  }
-  useEffect(() => {
-    // window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleResize)
-    handleResize()
-    return () => {
-      // window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  // const handleResize = () => {
+  //   const width = window.innerWidth
+  //   if (width <= 500) {
+  //     setWidthCategory('small')
+  //   }
+  //   else if (width <= 800) {
+  //     setWidthCategory('medium')
+  //   }
+  //   else {
+  //     setWidthCategory('large')
+  //   }
+  // }
+  //
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   window.addEventListener('resize', handleResize)
+  //   handleResize()
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //     window.removeEventListener('resize', handleResize)
+  //   }
+  // }, [])
 
   return (
     <NavDiv>
       {/* <NavDiv isScrolled={isScrolled} isMain={main}> */}
       <Container>
         <LogoDiv onClick={() => navigate('/')}>
-          {widthCategory !== 'large' ? (
+          <Logo src={StrokeLogo} alt="logo" />
+          {/* {widthCategory !== 'large' ? (
             <Logo src={StrokeLogo} alt="logo" />
           ) : (
             <Logo src={SeonghoLogo} alt="logo" />
-          )}
+          )} */}
         </LogoDiv>
         <NavList>
           <NavItem onClick={() => navigate('/')}>About me</NavItem>
           <NavItem onClick={() => navigate('/blog')}>Blog</NavItem>
+          <NavItem onClick={() => navigate('/exercise')}>Exercise</NavItem>
 
+          {/* 
           {widthCategory !== 'small' ? (
             <RowDiv>
               <NavItem onClick={() => navigate('/blog/?category=JavaScript')}>
@@ -145,8 +151,7 @@ const NavBar = () => {
           ) : (
             ''
           )}
-
-          {widthCategory === 'large' ? (
+{widthCategory === 'large' ? (
             <RowDiv>
               <NavItem onClick={() => navigate('/blog/?category=Vue')}>
                 Vue
@@ -160,7 +165,7 @@ const NavBar = () => {
             </RowDiv>
           ) : (
             ''
-          )}
+          )} */}
         </NavList>
       </Container>
     </NavDiv>
