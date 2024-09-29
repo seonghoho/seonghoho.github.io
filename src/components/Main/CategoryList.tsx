@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, ReactNode, useState } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -31,12 +31,17 @@ const CategoryContainer = styled.div`
 `
 
 // 카테고리 목록 감싼 div
-const CategoryListWrapper = styled.div`
+const CategoryListWrapper = styled.div<{ isOpenArrow: boolean }>`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  max-height: ${({ isOpenArrow }) => (isOpenArrow ? 'none' : '90px')};
+  overflow: ${({ isOpenArrow }) =>
+    isOpenArrow ? 'visible' : 'hidden'}; // 숨겨진 부분 처리
 
   @media (max-width: 800px) {
+    max-height: ${({ isOpenArrow }) =>
+      isOpenArrow ? 'none' : '80px'}; // 모바일에서 두 줄 높이 조정
   }
 `
 
@@ -67,6 +72,27 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
 
   @media (max-width: 800px) {
     font-size: 15px;
+  }
+`
+
+// 화살표 div
+const Arrow = styled.div<{ isOpenArrow: boolean }>`
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+  background-color: #e2e8f0;
+
+  display: flex;
+  flex-direction: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #8c99ff;
+    color: #fff;
+    transition: 0.3s;
   }
 `
 
@@ -103,11 +129,12 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
   categoryList,
 }) {
   const selectedCategoryCount = categoryList[selectedCategory] || 0
+  const [isOpenArrow, setIsOpenArrow] = useState<boolean>(false)
 
   return (
     <CategoryContainer>
-      <CategoryListWrapper>
-        {/* 카테고리 목록 */}
+      {/* 카테고리 목록 */}
+      <CategoryListWrapper isOpenArrow={isOpenArrow}>
         {Object.entries(categoryList).map(([name]) => (
           <CategoryItem
             to={`/blog/?category=${name}`}
@@ -118,6 +145,13 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
           </CategoryItem>
         ))}
       </CategoryListWrapper>
+
+      <Arrow
+        isOpenArrow={isOpenArrow}
+        onClick={() => setIsOpenArrow(!isOpenArrow)}
+      >
+        {isOpenArrow ? '△' : '▽'}
+      </Arrow>
       {/* 현재 카테고리 */}
       <CurrentCategory>
         <SelectedCategory>{selectedCategory}</SelectedCategory>
