@@ -10,32 +10,32 @@
 module.exports = {
   // 사이트 메타태그
   siteMetadata: {
-    title: `최성호 | 프론트엔드 포트폴리오`,
-    description: `최성호 | 프론트엔드 개발자 포트폴리오 , 기술 블로그`,
+    title: `seonghoho dev log`,
+    description: `seonghoho의 기술 블로그`,
     author: `ChoiSeongho`,
     siteUrl: `https://seonghoho.github.io/`,
-    headline: `최성호의 포트폴리오`,
+    headline: `seonghoho의 기술 블로그`,
     basePath: `/`,
     name: `Choi Seongho`,
     version: `1.0.0`,
     developer: `Choi Seongho`,
     coauthorBusiness: `None`,
-    project: `Portfolio`,
+    project: `Dev blog`,
     url: `https://seonghoho.github.io/`,
     message: `Welcome to my portfolio site!`,
-    keywords: `프론트엔드, 프론트엔드 개발자, 프론트엔드 개발자 포트폴리오, 프론트엔드 포트폴리오, Frontend Developer, Portfolio, ChoiSeongho`,
+    keywords: `프론트엔드, 프론트엔드 개발자, Frontend Developer, dev log, 개발블로그, ChoiSeongho`,
     language: `ko`,
     og: {
       type: `website`,
-      title: `최성호 | 프론트엔드 포트폴리오`,
-      description: `최성호 | 프론트엔드 개발자 포트폴리오`,
+      title: `seonghoho의 기술 블로그`,
+      description: `seonghoho의 기술 블로그`,
       url: `https://seonghoho.github.io/`,
       image: `https://seonghoho.github.io/images/og-image.jpg`,
     },
     twitter: {
       card: `summary_large_image`,
-      title: `최성호 | 프론트엔드 포트폴리오`,
-      description: `최성호 | 프론트엔드 개발자 포트폴리오`,
+      title: `seonghoho의 기술 블로그`,
+      description: `seonghoho의 기술 블로그`,
       url: `https://seonghoho.github.io/`,
       image: `https://seonghoho.github.io/images/twitter-image.jpg`,
     },
@@ -90,13 +90,13 @@ module.exports = {
       // 파비콘 추가하기 위한 매니페스트
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `CSH's Portfolio`,
-        short_name: `Portfolio`,
+        name: `seonghoho dev log`,
+        short_name: `seonghoho`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `standalone`,
-        icon: `static/favicon-16x16.png`, // png 파일이어야 에러 안남
+        icon: `${__dirname}/static/favicon-16x16.png`, // png 파일이어야 에러 안남
       },
     },
 
