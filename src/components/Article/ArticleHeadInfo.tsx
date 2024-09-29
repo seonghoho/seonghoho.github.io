@@ -29,8 +29,6 @@ const ArticleHeadInfoWrapper = styled.div`
 const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
-  overflow-wrap: break-word;
-  margin-top: auto;
   text-overflow: ellipsis;
   white-space: normal;
   -webkit-line-clamp: 2;
@@ -40,10 +38,18 @@ const Title = styled.div`
   font-size: 36px;
   font-weight: 600;
 
+  /* 텍스트가 강제로 줄바꿈되도록 처리 */
+  word-break: break-word;
+  hyphens: auto;
+
+  /* 최대 너비를 화면에 맞게 설정하여 넘치지 않도록 함 */
+  max-width: 100%;
+
   @media (max-width: 800px) {
     font-size: 30px;
     margin: 0 0 30px;
   }
+
   @media (max-width: 400px) {
     font-size: 25px;
   }
