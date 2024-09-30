@@ -79,7 +79,7 @@ module.exports = {
           {
             userAgent: '*',
             allow: '/',
-            disallow: ['/blog/?category='],
+            // disallow: ['/blog/?category='],
           },
         ],
       },
