@@ -94,19 +94,19 @@ module.exports = {
       },
     },
 
-    {
-      // 파비콘 추가하기 위한 매니페스트
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `seonghoho dev log`,
-        short_name: `seonghoho`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#000000`,
-        display: `standalone`,
-        icon: `${__dirname}/static/favicon-16x16.png`, // png 파일이어야 에러 안남
-      },
-    },
+    // {
+    //   // 매니페스트를 추가하면 pwa 됩니다
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `seonghoho dev log`,
+    //     short_name: `seonghoho`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#000000`,
+    //     display: `standalone`,
+    //     icon: `${__dirname}/static/favicon-16x16.png`, // png 파일이어야 에러 안남
+    //   },
+    // },
 
     {
       // 파일 시스템에서 이미지를 소스합니다.
