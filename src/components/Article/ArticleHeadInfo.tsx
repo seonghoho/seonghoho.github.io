@@ -18,7 +18,7 @@ const ArticleHeadInfoWrapper = styled.div`
   border-bottom: solid 1px #d9d9d9;
 
   @media (max-width: 800px) {
-    width: 100%;
+    /* width: 100%; */
     padding: 30px 20px;
   }
   @media (max-width: 500px) {
@@ -44,6 +44,7 @@ const Title = styled.div`
 
   /* 최대 너비를 화면에 맞게 설정하여 넘치지 않도록 함 */
   max-width: 100%;
+  width: 100%;
 
   @media (max-width: 800px) {
     font-size: 30px;
