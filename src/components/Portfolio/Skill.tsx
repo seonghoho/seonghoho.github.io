@@ -4,7 +4,8 @@ import styled from '@emotion/styled'
 const Background = styled.div`
   width: 100%;
   height: auto;
-  background-image: linear-gradient(320deg, #fff 0%, #91ffff67 100%);
+  /* background-image: linear-gradient(320deg, #fff 0%, #91ffff67 100%); */
+  background-color: #e2e8f0;
   color: #444;
 `
 
