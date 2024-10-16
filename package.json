@@ -1,7 +1,7 @@
 {
-  "name": "seongho-frontend-portfolio",
+  "name": "Seonghoho's dev blog",
   "private": true,
-  "description": "FrontEnd developer portfolio and dev blog ",
+  "description": "FrontEnd developer dev blog",
   "version": "0.1.0",
   "author": "Seongho Choi <chltjdgh3@gmail.com>",
   "dependencies": {
