@@ -1,7 +1,7 @@
 {
-  "name": "Seonghoho's dev blog",
+  "name": "seonghoho",
   "private": true,
-  "description": "FrontEnd developer dev blog",
+  "description": "FrontEnd developer devlog",
   "version": "0.1.0",
   "author": "Seongho Choi <chltjdgh3@gmail.com>",
   "dependencies": {

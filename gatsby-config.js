@@ -10,7 +10,7 @@
 module.exports = {
   // 사이트 메타태그
   siteMetadata: {
-    title: `seonghoho dev log`,
+    title: `seonghoho's devlog`,
     description: `seonghoho의 기술 블로그`,
     author: `ChoiSeongho`,
     siteUrl: `https://seonghoho.github.io/`,
@@ -73,8 +73,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://seonghoho.github.io/',
-        sitemap: 'https://seonghoho.github.io/sitemap.xml',
         policy: [
           {
             userAgent: '*',
