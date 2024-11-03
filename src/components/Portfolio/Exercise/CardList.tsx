@@ -35,9 +35,9 @@ const Container = styled.div`
 const CardList = () => {
   return (
     <Container>
-      <Card>
+      {/* <Card>
         <ElasticLine />
-      </Card>
+      </Card> */}
       <Card>
         <Clock />
       </Card>
