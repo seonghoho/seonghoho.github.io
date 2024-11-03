@@ -6,8 +6,6 @@ summary: 'Mac OS 환경으로 VSCode에서의 터미널에서 Brew를 인식하�
 thumbnail: 'mac-vscode-brew-thumbnail.png'
 ---
 
-![mac-vscode-brew-thumbnail](mac-vscode-brew-thumbnail.png)
-
 ## 개요
 
 며칠 전, 새로운 회사에 들어오면서 초기화된 맥북을 받았습니다. 모든 환경 설정을 다시 해야하는 상황이었는데, 아무래도 초기 환경 세팅을 자주하는 것은 아니다보니, 찾아보면서 하고 잊고 또 찾아보게 되었습니다. 다들 저와 마찬가지일 것이라 생각합니다 ㅎㅎ..

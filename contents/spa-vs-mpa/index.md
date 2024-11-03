@@ -6,8 +6,6 @@ summary: 'SPA와 MPA 그리고 CSR과 SSR, 차이점과 장단점이 무엇인�
 thumbnail: 'spa-vs-mpa-thumbnail.png'
 ---
 
-![spa-vs-mpa](spa-vs-mpa-thumbnail.png)
-
 ## 개요
 
 웹 애플리케이션 개발에서 중요한 두 가지 아키텍처 패턴인 SPA(Single Page Application)와 MPA(Multiple Page Application)에 대해 살펴보겠습니다.

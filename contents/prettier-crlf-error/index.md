@@ -6,8 +6,6 @@ summary: 'CRLF, LF 관련 설정을 바꿨는데도 CRLF error가 발생할 때 
 thumbnail: 'prettier-error-thumbnail.png'
 ---
 
-![prettier-error-thumbnail](prettier-error-thumbnail.png)
-
 ## 개요
 
 진행하던 프로젝트가 있었다.

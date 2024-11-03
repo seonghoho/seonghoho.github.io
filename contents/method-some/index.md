@@ -6,8 +6,6 @@ summary: 'JavaScript 배열 객체의 메서드 중 하나인 some()에 대해 �
 thumbnail: 'method-some-thumbnail.png'
 ---
 
-![method-some-thumbnail.png](method-some-thumbnail.png)
-
 ## 개요
 
 JavaScript를 사용하여 알고리즘 문제를 풀던 도중, 배열을 순회하는 과정에서 some() 메서드를 활용하는 방법이 있다는 것을 접했습니다.

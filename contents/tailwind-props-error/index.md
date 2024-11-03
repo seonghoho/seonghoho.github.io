@@ -6,8 +6,6 @@ summary: 'Tailwind css에서 동적 클래스 사용 시 에러 발생한다. �
 thumbnail: 'tailwind-props-error-thumbnail.png'
 ---
 
-![tailwind-props-error-thumbnail](tailwind-props-error-thumbnail.png)
-
 ## 개요
 
 Atomic Design Pattern과 Tailwind를 사용하여 진행한 프로젝트를 제작할 때의 일이다.

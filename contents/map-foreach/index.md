@@ -6,8 +6,6 @@ summary: 'JavaScript에 존재하는 메서드 중 forEach와 map의 차이점�
 thumbnail: 'forEach-map-thumbnail.png'
 ---
 
-![forEach-map-thumbnail](forEach-map-thumbnail.png)
-
 ## 개요
 
 JavaScript에서 배열을 순회할 때 주로 사용하는 두 가지 메서드가 다.

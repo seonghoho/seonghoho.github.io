@@ -6,8 +6,6 @@ summary: 'TypeScript를 사용할 때 마주한 interface와 type에 대해 알�
 thumbnail: 'type-interface-thumbnail.png'
 ---
 
-![type-interface-thumbnail](type-interface-thumbnail.png)
-
 ## 개요
 
 TypeScript를 사용하다 보면 `interface`와 `type`을 자주 접하게 됩니다.

@@ -6,8 +6,6 @@ summary: '주소창에 URL을 입력했을 때 일어나는 일을 간략하게,
 thumbnail: 'browser-enter-url-course-thumbnail.png'
 ---
 
-![browser-enter-url-course-thumbnail](browser-enter-url-course-thumbnail.png)
-
 # 주소창에 URL 입력 시 일어나는 일
 
 ## 0. 개요

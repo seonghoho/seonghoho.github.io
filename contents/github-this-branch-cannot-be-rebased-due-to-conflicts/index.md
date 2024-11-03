@@ -6,8 +6,6 @@ summary: 'Git 사용 시 작업중인 브랜치를 develop 브랜치로 머지�
 thumbnail: 'rebase-error-thumbnail.png'
 ---
 
-![rebase-error-thumbnail](rebase-error-thumbnail.png)
-
 ## 개요
 
 지난 달, 팀원들과 토이 프로젝트를 진행하는 중이었다.

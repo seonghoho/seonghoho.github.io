@@ -6,8 +6,6 @@ summary: '모든 Event를 포함하는 PointerEvent 속성에 대해 알아보�
 thumbnail: 'pointer-event-thumbnail.png'
 ---
 
-![pointer-event-thumbnail](pointer-event-thumbnail.png)
-
 ## 서론
 
 웹 애플리케이션에서 사용자와의 상호작용을 구현할 때, 전통적으로 마우스 이벤트를 웹에서 널리 사용되어져 왔습니다만, 기술의 발전과 크로스 플랫폼 지원을 통해 터치 스크린과 스타일러스 펜 등 다양한 입력 장치의 사용이 증가함에 따라, `PointerEvent`가 등장했습니다. 이번 포스트에서는 `PointerEvent`가 무엇인지, 어떻게 작동하는지, 그리고 `MouseEvent`와의 차이점에 대해 알아보겠습니다.

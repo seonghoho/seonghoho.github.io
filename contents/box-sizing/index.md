@@ -6,8 +6,6 @@ summary: '프론트엔드 이외에도 꼭 알아야 할 box-sizing CSS에 대�
 thumbnail: 'box-sizing-thumbnail.png'
 ---
 
-![box-sizing-thumbnail](box-sizing-thumbnail.png)
-
 ## 개요
 
 개발을 진행하면서 CSS를 적용하다 보면, 생각보다 계산을 할 부분이 많아진다.

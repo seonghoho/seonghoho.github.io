@@ -6,8 +6,6 @@ summary: 'URL로 불러왔던 Web Font를 로딩 최적화를 위해 Local Font�
 thumbnail: 'transform-localfont-thumbnail.png'
 ---
 
-![transform-localfont-thumbnail](transform-localfont-thumbnail.png)
-
 ## 개요
 
 기존 github.io 블로그에는 `@emotion`을 사용해 프로젝트에 style을 적용하고 있다.
